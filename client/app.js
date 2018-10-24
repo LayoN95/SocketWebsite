@@ -2,6 +2,7 @@ var config = require("./config.js");
 var socket = require("socket.io-client")("http://192.168.1.112:3000");
 var gpio = require("rpi-gpio");
 
+
 process.on("SIGINT", function(){
   gpio.write(config.led, 1, function(){
     gpio.destroy(function(){
