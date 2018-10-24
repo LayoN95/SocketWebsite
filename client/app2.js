@@ -1,20 +1,10 @@
-var onoff = require('onoff'); //#A
+var socket = require("socket.io-client")("192.168.1.112:3000");
+var Gpio = require("onoff").Gpio;
+var LED = new Gpio(22, 'out');
 
-var Gpio = onoff.Gpio,
-  led = new Gpio(4, 'out'), //#B
-  interval;
-
-interval = setInterval(function () { //#C
-  var value = (led.readSync() + 1) % 2; //#D
-  led.write(value, function() { //#E
-    console.log("Changed LED state to: " + value);
-  });
-}, 2000);
-
-process.on('SIGINT', function () { //#F
-  clearInterval(interval);
-  led.writeSync(0); //#G
-  led.unexport();
-  console.log('Bye, bye!');
-  process.exit();
-});
+socket.on("connect", function(){
+	console.log("Connected to server");
+	socket.on("updateState", function(state){
+		console.log("The new state is: " + state);
+		});
+})

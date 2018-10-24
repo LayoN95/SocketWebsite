@@ -2,7 +2,7 @@ var config = {}
 
 // Change this to the physical pin number to which you connected 
 // the LED
-config.led = -1;
+config.led = 6;
 
 // Enter the path to your express server. For example if running
 // locally on your network it might be something like
@@ -10,7 +10,7 @@ config.led = -1;
 // the machine running the server code.
 config.server_url = "";
 
-if(config.led == -1 || config.server_url == ""){
+if(config.led == -1){
   console.log("Before running app.js you must configure the LED pin number and server url in ./config.js");
   process.exit(-1);
 }
