@@ -37,6 +37,17 @@
                   <label><i></i></label>
                 </div>
               </div>
+              
+              <div class="dht11">
+                  <table class="temperature" id="temps">
+                    <thead>
+                      <tr>
+                        <th>Sensor ID</th>
+                        <th>Temperature (celsius)</th>
+                        </tr>
+                      </thead>  
+                  </table>
+              </div>
           </div>
         </div>
       </div>
@@ -54,6 +65,18 @@
     var socket = io.connect('/');
     $("#myonoffswitch").change(function(){
       socket.emit("stateChanged", this.checked);
+    });
+    
+    socket.on('sensors', function(data){
+        data.forEach(function(d){
+            var html= '<tr><td>' + d + '</td><td id="' + d + '"></td></tr>';
+            $('#temps').append(html);
+        });
+    });
+    
+    //update corresponding row with sensor value
+    socket.on('temps', function (data) {
+    $('#' + data.id).html(data.value);
     });
     </script>
 
