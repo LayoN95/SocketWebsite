@@ -2,6 +2,7 @@ var socket = require('socket.io-client')('http://192.168.1.112:3000'),
 	dht11 = require('node-dht-sensor');
 var temp, humid;
 
+//Polaczenie z baza danych
 var mysql = require('mysql');
 var con = mysql.createConnection({
 	host: "localhost",
@@ -15,12 +16,14 @@ con.connect(function(err) {
 	console.log("Connected!")
 });
 
+//inicjalizacja czujnika DHT11
 dht11.initialize(11,12);
 
 var interval = setInterval(function () {
 read();
 }, 3000);
 
+//Odczyt danych z DHT11
 function read() {
 	var readout = dht11.read();
 	console.log("Temperatura: " + readout.temperature.toFixed(2) + "C " + "Wilgotnosc: " + readout.humidity.toFixed(2) + "%");
@@ -30,6 +33,7 @@ function read() {
 	sendDB();
 };
 
+//Przeslanie danych do bazy 
 function sendDB() {
 	var dateTime = require('node-datetime');
 	var dt = dateTime.create();

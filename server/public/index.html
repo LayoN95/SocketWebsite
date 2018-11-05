@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Control My Stuff | DailyIoT</title>
+    <title>Smart Home</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -40,15 +40,15 @@
  		
               <a href="dht-11.html">Sensor DHT-11</a>
               <div class="dht11">
-<table border="2" width="100%">
-<tr><td colspan="2"><h1>Temperatura powietrza:</h1></td></tr>
-<tr><td><h1>Kuchnia</h1></td><td><h1>Salon</h1></td></tr>
-<tr><td><h1 id="28-00000a38e7b7"></h1></td>
-<td><h1 id="28-00000a3adcf4"></h1></td></tr>
-<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
-<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
-<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
-</table>
+		<table border="2" width="100%">
+		<tr><td colspan="2"><h1>Temperatura powietrza:</h1></td></tr>
+		<tr><td><h1>Kuchnia</h1></td><td><h1>Salon</h1></td></tr>
+		<tr><td><h1 id="28-00000a38e7b7"></h1></td>
+		<td><h1 id="28-00000a3adcf4"></h1></td></tr>
+		<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
+		<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
+		<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
+		</table>
                   
               </div>
           </div>
@@ -66,31 +66,26 @@
 
     <script type="text/javascript">
     var socket = io.connect('/'); 
+    
+//Obsluga sterowania portem GPIO
     $("#myonoffswitch").change(function(){
       socket.emit("stateChanged", this.checked);
       console.log("StateChanged");
     });
     
-			
+//Wyswietlenie temperatury pobranej z czujnikow DS18B20			
     socket.on("updateTemp", function(data){
 	console.log(data);
-        
-        //    var html= '<tr><td>' + data.id + '</td><td id="' + data + '">'+data.value+'</td></tr>';
-          //  $("#temps").append(html);
-	    $("#" + data.id).text(data.value);
-           // $("#").text(data.value);
-    
+        $("#" + data.id).text(data.value);
+              
     });
+
+//Wyswietlenie danych z czujnika DHT11
     socket.on("dht11Sensor", function(data){
 	$("#dht11temp").text(data.temp);
 	$("#dht11humid").text(data.humid);
 	});	    
 
-    //update corresponding row with sensor value
-   // socket.on("updateTemp", function (data) {
-//	console.log(data);
-  //  $("#" + data.id).html(data.value);
-   // });
 
 
 
