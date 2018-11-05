@@ -30,15 +30,24 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div class="inner cover">
-            <h1 class="cover-heading">Control My Stuff</h1>
+            <h1 class="cover-heading">Smart Home</h1>
               <div class="onoffswitch" style="margin:0px auto;">
                 <div class="switch demo3">
                   <input type="checkbox" id="myonoffswitch">
                   <label><i></i></label>
                 </div>
               </div>
-              
+              <a href="dht-11.html">Sensor DHT-11</a>
               <div class="dht11">
+<table border="2" width="100%">
+<tr><td colspan="2"><h1>Temperatura powietrza:</h1></td></tr>
+<tr><td><h1>Kuchnia</h1></td><td><h1>Salon</h1></td></tr>
+<tr><td><h1 id="28-00000a38e7b7"></h1></td>
+<td><h1 id="28-00000a3adcf4"></h1></td></tr>
+<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
+<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
+<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
+</table>
                   <table class="temperature" id="temps" border="1">
                     <thead>
                       <tr>
@@ -62,22 +71,35 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script type="text/javascript">
-    var socket = io.connect('/');
+    var socket = io.connect('/'); 
     $("#myonoffswitch").change(function(){
       socket.emit("stateChanged", this.checked);
+      console.log("StateChanged");
     });
     
-    socket.on('sensors', function(data){
-        data.forEach(function(d){
-            var html= '<tr><td>' + d + '</td><td id="' + d + '"></td></tr>';
-            $('#temps').append(html);
-        });
-    });
+			
+    socket.on("updateTemp", function(data){
+	console.log(data);
+        
+        //    var html= '<tr><td>' + data.id + '</td><td id="' + data + '">'+data.value+'</td></tr>';
+          //  $("#temps").append(html);
+	    $("#" + data.id).text(data.value);
+           // $("#").text(data.value);
     
+    });
+    socket.on("dht11Sensor", function(data){
+	$("#dht11temp").text(data.temp);
+	$("#dht11humid").text(data.humid);
+	});	    
+
     //update corresponding row with sensor value
-    socket.on('temps', function (data) {
-    $('#' + data.id).html(data.value);
-    });
+   // socket.on("updateTemp", function (data) {
+//	console.log(data);
+  //  $("#" + data.id).html(data.value);
+   // });
+
+
+
     </script>
 
   </body>

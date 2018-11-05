@@ -17,4 +17,18 @@ io.on("connection", function(socket){
     console.log("State Changed: " + state);
     io.emit("updateState", state);
   });
+	socket.on("sensors", function(sensor){
+	console.log("sensor id: " + sensor);
+	io.emit("sensorID", sensor);
+});
+	socket.on("temps", function(data){
+	console.log("temp: " + data.value + "id: " + data.id);
+	io.emit("updateTemp", {"id": data.id, "value": data.value});
+	
+	});
+
+	socket.on("dht11", function(data){
+	console.log("dht11 temp: " + data.temperature); 
+	io.emit("dht11Sensor", {"temp": data.temperature, "humid": data.humidity});
+	});
 });
