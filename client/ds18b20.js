@@ -3,6 +3,8 @@ var socket = require('socket.io-client')('http://192.168.1.112:3000'),
     ds18b20 = require('ds18b20');
  
 var interval = 3000; //enter the time between sensor queries here (in milliseconds)
+
+exports.start = function () {
  
 //when a client connects
 socket.on("connect", function () {
@@ -34,3 +36,4 @@ console.log("update");
  
     }, interval);
 });
+};

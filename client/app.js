@@ -4,6 +4,7 @@ var Gpio = require('onoff').Gpio;
 var LED = new Gpio(22, 'out');
 
 
+exports.start = function() {
 process.on("SIGINT", function(){
  
   
@@ -23,3 +24,4 @@ socket.on("connect", function(){
 	}
   });
 })
+};

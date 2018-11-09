@@ -10,6 +10,16 @@ var server = app.listen(app.get('port'), function() {
 
 var io = require("socket.io").listen(server);
 
+//uruchonienie czujnikow
+
+var dht11Plugin = require('./../../client/dht11.js');
+var ds18b20Plugin = require('./../../client/ds18b20.js');
+var ledPlugin = require('./../../client/app.js');
+
+dht11Plugin.start();
+ds18b20Plugin.start();
+ledPlugin.start();
+
 io.on("connection", function(socket){
   console.log("Client Connected");
 
