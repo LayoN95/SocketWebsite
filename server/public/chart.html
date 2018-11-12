@@ -20,26 +20,23 @@
         <canvas id="myChart"></canvas>
         <canvas id="myChart2"></canvas>
     </div>
-    
-        <?php
-        $servername = "localhost";
-        $username = "SmartHome";
-        $password = "raspberry";
 
-        // Create connection
-        $conn = new mysqli($servername, $username, $password);
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } 
-        echo "Connected successfully";
-        ?>
              
     
     <script>
         //Database
+        var mysql = require('mysql');
+var con = mysql.createConnection({
+	host: "localhost",
+	user: "SmartHome",
+	password: "raspberry",
+	database: "SmartHome"
+});
 
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("Connected!")
+});
         
         //Chart
         let myChart = document.getElementById('myChart').getContext('2d');
