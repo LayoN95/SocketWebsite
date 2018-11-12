@@ -25,18 +25,11 @@
     
     <script>
         //Database
-        var mysql = require('mysql');
-var con = mysql.createConnection({
-	host: "localhost",
-	user: "SmartHome",
-	password: "raspberry",
-	database: "SmartHome"
-});
+        <script src="/socket.io/socket.io.js"></script>
 
-con.connect(function(err) {
-	if (err) throw err;
-	console.log("Connected!")
-});
+    <   script type="text/javascript">
+        var socket = io.connect('/'); 
+        socket.emit("readDB");
         
         //Chart
         let myChart = document.getElementById('myChart').getContext('2d');
