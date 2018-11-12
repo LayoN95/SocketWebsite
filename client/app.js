@@ -17,7 +17,7 @@ process.on("SIGINT", function(){
 socket.on("connect", function(){
   console.log("Connected to server");
     
-  socket.on("kitchenState", function(state){
+  socket.on("updateState", function(state){
     console.log("The new state is: " + state);
    if(state == true){
    Kitchen_LED.writeSync(1);
