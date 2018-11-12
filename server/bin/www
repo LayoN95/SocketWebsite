@@ -47,4 +47,9 @@ io.on("connection", function(socket){
     io.emit("readDB");
     });
     
+    socket.on("dbResult", function(data){
+    console.log(data);
+    io.emit("dbResult", data);
+    });
+    
 });
