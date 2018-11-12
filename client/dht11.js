@@ -63,7 +63,7 @@ function readDB() {
 	con.query(sql, function(err, result) {
 		if(err) throw err;
         dbResult=result;
-		console.log(dbResult);
+		//console.log(dbResult);
 });   
     
 }    
