@@ -42,7 +42,7 @@ function read() {
 socket.on("readDB", function(){
     readDB();
     console.log("readDB from dht11");
-    //socket.emit("dbResult", {"temp": dbResult});
+    socket.emit("dbResult", dbResult);
 });
 
 //Przeslanie danych do bazy 
@@ -62,7 +62,6 @@ function readDB() {
  var sql = ("SELECT temperature FROM `DHT11` ORDER BY id DESC LIMIT 10");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
-        socket.emit("dbResult", result);
         //console.log(dbResult);
 });   
     
