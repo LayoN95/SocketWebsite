@@ -36,6 +36,7 @@ function read() {
 	humid = readout.humidity.toFixed(2);
 	socket.emit("dht11", {"temperature": readout.temperature.toFixed(2), "humidity": readout.humidity.toFixed(2)});
 	sendDB();
+    readDB();
 };
   
 
