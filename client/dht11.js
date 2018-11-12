@@ -41,8 +41,7 @@ function read() {
   socket.on("readDB", function(){
     readDB();
     console.log(result);
-    console.log("readDB");
-      console.log("readDB");
+    console.log("readDB from DHT11");
   });    
 
 //Przeslanie danych do bazy 
