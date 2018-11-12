@@ -21,7 +21,7 @@
         <canvas id="myChart2"></canvas>
     </div>
     
-        <?php
+        <script language="php"> 
         $servername = "localhost";
         $username = "SmartHome";
         $password = "raspberry";
@@ -34,7 +34,7 @@
             die("Connection failed: " . $conn->connect_error);
         } 
         echo "Connected successfully";
-        ?>
+    </script>
              
     
     <script>
