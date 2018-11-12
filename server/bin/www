@@ -48,8 +48,8 @@ io.on("connection", function(socket){
     });
     
     socket.on("dbResult", function(data){
-    console.log("Baza Danych", + data.temp);
-    io.emit("dbResult", {"temp": data});
+    console.log("Baza Danych" + data.temp);
+    io.emit("dbResult", {"temp": data.temp});
     });
     
 });
