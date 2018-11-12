@@ -32,8 +32,8 @@
         var socket = io.connect('/'); 
         socket.emit("readDB");
         
-        socket.on("dbResult", function(dbResult){
-                  console.log("DB Result" + dbResult);
+        socket.on("dbResult", function(data){
+                  console.log("DB Result" + data.temp);
                   });
         
         //Chart
