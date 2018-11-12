@@ -48,7 +48,7 @@ io.on("connection", function(socket){
     });
     
     socket.on("dbResult", function(data){
-    console.log("Baza Danych: " + data);
+    console.log(data);
     io.emit("dbResult", data);
     });
     
