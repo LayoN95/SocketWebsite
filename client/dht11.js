@@ -1,5 +1,5 @@
 exports.start = function() {
-var socket = require('socket.io-client')('http://192.168.1.112:3000'),
+var socket = require('socket.io-client')('http://192.168.43.74:3000'),
 	dht11 = require('node-dht-sensor');
 var temp, humid;
 var dbResult;

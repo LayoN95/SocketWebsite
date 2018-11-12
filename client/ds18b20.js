@@ -1,5 +1,5 @@
 
-var socket = require('socket.io-client')('http://192.168.1.112:3000'),
+var socket = require('socket.io-client')('http://192.168.43.74:3000'),
     ds18b20 = require('ds18b20');
  
 var interval = 3000;
