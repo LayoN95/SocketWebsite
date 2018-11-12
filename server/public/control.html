@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+	<link href="stylesheets/button.css" rel="stylesheet">
+
+</HEAD>
+<BODY>
+                <h1>Sterowanie</h1>
+
+        <div class="site-wrapper">
+
+            <div class="menu">
+            <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="dht-11.html">Wizualizacja</a></li>
+            <li><a href="dht-11.html">Sensor DHT-11</a></li>
+            <li><a href="control.html">Sterowanie</a></li>
+            </ul>
+              </div>
+            
+            <div class="control-wrapper">
+                <h1>Kuchnia</h1>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+                </label>
+            </div>
+                </div>
+                <h1>Łazienka</h1>
+                <div class="bathroomswitch" style="margin:0px auto;">
+                    <div class="switch demo3">
+                        <input type="checkbox" id="bathroomonoff">
+                        <label><i></i></label>
+                    </div>
+                </div>
+        </div>
+    
+    
+            <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="/socket.io/socket.io.js"></script>
+
+            <script type="text/javascript">
+            var socket = io.connect('/'); 
+    
+            //Obsluga sterowania portem GPIO
+            $("#kitchenonoff").change(function(){
+              socket.emit("kitchenChanged", this.checked);
+              console.log("KitchenStateChanged");
+            });
+                
+            $("#bathroomonoff").change(function(){
+              socket.emit("bathroomChanged", this.checked);
+              console.log("BathroomStateChanged");
+            });
+                
+            </script>
+
+</BODY>
+</HTML>

@@ -23,7 +23,7 @@ if(mysql_num_rows($wynik) > 0) {
        <a href=\"index.php?a=del&amp;id={$r['id']}\">DEL</a> 
        <a href=\"index.php?a=edit&amp;id={$r['id']}\">EDIT</a> 
        </td>"; 
-        echo "</tr>"; 
+        echo "</tr>";
     } 
     echo "</table>"; 
 } 

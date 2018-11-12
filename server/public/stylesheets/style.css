@@ -31,17 +31,47 @@ body {
 }
 body {
   color: #fff;
-  text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
   box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+/*
+Menu
+*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 20px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
-  width: 100%;
+  margin: auto;
+  background-color: gray;
+  width: 80%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -327,4 +357,55 @@ body {
   text-shadow: 
     0 1px 0 #afcb9b,
     0 -1px 0 #6b8659;
+}
+
+.visualization {
+    border: 5px solid;
+    border-color: aqua;
+    background: url('../images/bg.jpg');
+    width: 700px;
+    height: 650px;
+}
+
+.bathroom {
+    width: 100px;
+    height: 30px;
+    border: 1px solid;
+    border-color: black;
+    float: left;
+    margin: 60px;
+    margin-top: 100px;
+}
+.bedroom1 {
+    border: 1px solid;
+    border-color: black;
+    float: left;
+    margin: 50px;
+    margin-top: 100px;
+}
+.bedroom2 {
+    border: 1px solid;
+    border-color: black;
+    float: right;
+    margin: 65px;  
+    margin-top: 100px;
+}
+
+.kitchen {
+    border: 1px solid;
+    border-color: black; 
+    margin-top: 200px;
+    float: left;
+    margin: 60px;
+}
+
+.livingroom {
+    border: 1px solid;
+    border-color: black;
+    margin-top: 200px;
+    float: left;
+}
+
+.kitchenswitch {
+    
 }
