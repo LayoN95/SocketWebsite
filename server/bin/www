@@ -45,6 +45,6 @@ io.on("connection", function(socket){
     
     socket.on("readDB", function(){
     console.log("readDB");
-    socket.emit("readDB");
+    socket.emit("readDB1");
     });
 });
