@@ -51,6 +51,14 @@ function sendDB() {
 		console.log("1 record inserted");
 });
 };
+
+function readDB() {
+ var sql = ("SELECT * FROM `DHT11`");
+	con.query(sql, function(err, result) {
+		if(err) throw err;
+		console.log("1 record inserted");
+});   
     
+}    
 
 };
