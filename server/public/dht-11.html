@@ -53,7 +53,7 @@
 //Wyswietlenie danych z czujnika DHT11
     socket.on("dht11Sensor", function(data){
 	$("#bathroom").text(data.temp);
-	$("#dht11humid").text(data.humid);
+        console.log("bathroom");
 	});	    
 
 
