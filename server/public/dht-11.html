@@ -32,7 +32,7 @@
               </div>
     <div  class="visualization">
         <!--<h1 style = "float: left; margin: 180px; margin-top: 180px">123</h1>-->
-        <div class="bathroom"><h2>Łazienka</h2></div>
+        <div class="bathroom"><h2 id="bathroom">Łazienka</h2></div>
         <div class="bedroom1"><h2>Sypialnia 1</h2></div>
         <div class="bedroom2"><h2>Sypialnia 2</h2></div>
         <div class="kitchen"><h1>Kuchnia</h1></div>
@@ -43,6 +43,19 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+    var socket = io.connect('/'); 
+    
 
+//Wyswietlenie danych z czujnika DHT11
+    socket.on("dht11Sensor", function(data){
+	$("#bathroom").text(data.temp);
+	$("#dht11humid").text(data.humid);
+	});	    
+
+
+
+
+    </script>
 </BODY>
 </HTML>
