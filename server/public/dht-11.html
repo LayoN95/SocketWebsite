@@ -50,6 +50,7 @@
     <script type="text/javascript">
     var socket = io.connect('/'); 
     
+        socket.emit("readDB");
 
 //Wyswietlenie danych z czujnika DHT11
     socket.on("dht11Sensor", function(data){

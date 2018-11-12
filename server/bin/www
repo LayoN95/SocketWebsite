@@ -43,4 +43,8 @@ io.on("connection", function(socket){
 	io.emit("dht11Sensor", {"temp": data.temperature, "humid": data.humidity});
 	});
     
+    socket.on("readDB", function(data){
+    io.emit("readDB");
+    });
+    
 });
