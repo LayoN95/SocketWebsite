@@ -39,7 +39,7 @@ function read() {
 };
 
   socket.on("readDB1", function(){
-    readDB();
+    //readDB();
     console.log(result);
     console.log("readDB from DHT11");
   });    
