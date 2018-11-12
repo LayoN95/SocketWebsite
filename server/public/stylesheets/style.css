@@ -392,22 +392,22 @@ li a:hover {
     border-color: black;
     float: right;
     margin: 65px;  
-    margin-top: 0px;
+    margin-top: 100px;
 }
 
 .kitchen {
-    position: static;
     border: 1px solid;
     border-color: black;
     float: left;
-    margin-top: 500px;
-    margin: 0px;
+    margin-top: 200px;
+    margin: 200px;
 }
 
 .livingroom {
     border: 1px solid;
     border-color: black;
-    margin-top: 200px;
+    margin-top: 300px;
+    margin: 70px;
     float: right;
 }
 
