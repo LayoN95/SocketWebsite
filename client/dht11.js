@@ -37,12 +37,7 @@ function read() {
 	socket.emit("dht11", {"temperature": readout.temperature.toFixed(2), "humidity": readout.humidity.toFixed(2)});
 	sendDB();
 };
-
-  socket.on("readDB1", function(){
-    //readDB();
-    console.log(result);
-    console.log("readDB from DHT11");
-  });    
+  
 
 //Przeslanie danych do bazy 
 function sendDB() {
