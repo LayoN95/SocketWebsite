@@ -57,7 +57,8 @@ function readDB() {
  var sql = ("SELECT temperature FROM `DHT11` ORDER BY id DESC LIMIT 10");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
-		console.log(result);
+        dbResult=result;
+		console.log(dbResult);
 });   
     
 }    
