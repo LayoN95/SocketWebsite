@@ -21,13 +21,29 @@
         <canvas id="myChart2"></canvas>
     </div>
     
+        <?php
+        $servername = "localhost";
+        $username = "SmartHome";
+        $password = "raspberry";
+
+        // Create connection
+        $conn = new mysqli($servername, $username, $password);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        } 
+        echo "Connected successfully";
+        ?>
+             
+    
     <script>
         //Database
 
         
         //Chart
         let myChart = document.getElementById('myChart').getContext('2d');
-        
+    
         
         //Oprions
         Chart.defaults.global.defaultFontFamily = 'Lato';
