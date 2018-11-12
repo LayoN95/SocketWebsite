@@ -50,6 +50,7 @@
                   var html='';
         for (var i=0; i<data.length; i++) {
           html += data[i].temperature + '<br>';
+            tab = data;
         }  
         document.getElementById("display").innerHTML = html;
         console.log(data);
@@ -61,8 +62,8 @@
         
         //Oprions
         Chart.defaults.global.defaultFontFamily = 'Lato';
-        Chart.defaults.global.defaultFontSize = 11;
-        Chart.defaults.global.defaultFontColor = '#999'
+        Chart.defaults.global.defaultFontSize = 15;
+        Chart.defaults.global.defaultFontColor = '#000'
         
         let massPopChart = new Chart(myChart, {
             type: 'line',
@@ -88,7 +89,7 @@
                         'rgba(255, 99, 132, 0.6)'
                     ],
                     borderWidth:1,
-                    borderColor:'#111',
+                    borderColor:'#000',
                     hoverBorderWidth: 3,
                     hoverBorderColor:'#000'
                 }]
