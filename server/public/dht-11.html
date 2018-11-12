@@ -33,10 +33,10 @@
     <div  class="visualization">
         <!--<h1 style = "float: left; margin: 180px; margin-top: 180px">123</h1>-->
         <div class="bathroom"><h2 id="bathroom"></h2></div>
-        <div class="bedroom1"><h2>Sypialnia 1</h2></div>
-        <div class="bedroom2"><h2>Sypialnia 2</h2></div>
-        <div class="kitchen"><h1>Kuchnia</h1></div>
-        <div class="livingroom"><h1>Salon</h1></div>        
+        <div class="bedroom1"><h2 id="28-00000a38e7b7">Sypialnia 1</h2></div>
+        <div class="bedroom2"><h2 id="28-00000a3adcf4">Sypialnia 2</h2></div>
+        <div class="kitchen"><h1 id="kitchen">Kuchnia</h1></div>
+        <div class="livingroom"><h1 id="livingroom"S>Salon</h1></div>        
         <h1>Taras</h1>
         </div>
                 </div>
@@ -57,7 +57,18 @@
         console.log("bathroom");
 	});	    
 
+    //Wyswietlenie temperatury pobranej z czujnikow DS18B20			
+    socket.on("updateTemp", function(data){
+	console.log(data);
+        $("#" + data.id).text(data.value);
+              
+    });
 
+//Wyswietlenie danych z czujnika DHT11
+    socket.on("dht11Sensor", function(data){
+	$("#livingroom").text(data.temp);
+	$("#kitchen").text(data.humid + "%");
+	});	    
 
 
     </script>
