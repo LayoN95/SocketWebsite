@@ -32,7 +32,7 @@
         var socket = io.connect('/'); 
         socket.emit("readDB");
         
-        socket.on("dbResult", funtion(dbResult){
+        socket.on("dbResult", function(dbResult){
                   console.log("DB Result");
                   });
         
