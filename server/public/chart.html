@@ -33,7 +33,7 @@
         socket.emit("readDB");
         
         socket.on("dbResult", function(data){
-                  console.log("DB Result" + data.temp);
+                  document.getElementById("display").innerHTML = data;
                   });
         
         //Chart
