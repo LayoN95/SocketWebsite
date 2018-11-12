@@ -54,7 +54,7 @@ function sendDB() {
 };
 
 function readDB() {
- var sql = ("SELECT * FROM `DHT11`");
+ var sql = ("SELECT * FROM `DHT11` ORDER BY DESC LIMIT 10");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
 		console.log(result);
