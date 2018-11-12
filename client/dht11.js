@@ -41,7 +41,7 @@ function read() {
  
 socket.on("readDB", function(){
     readDB();
-    console.log("readDB from dht11" + dbResult);
+    console.log("readDB from dht11");
     socket.emit("dbResult", {"temp": dbResult});
 });
 
