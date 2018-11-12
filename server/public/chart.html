@@ -29,6 +29,8 @@
         <script type="text/javascript">
         var socket = io.connect('/'); 
         socket.emit("readDB");
+        console.log("readDB");
+    
         
         //Chart
         let myChart = document.getElementById('myChart').getContext('2d');
