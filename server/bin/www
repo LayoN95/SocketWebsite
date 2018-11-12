@@ -48,8 +48,8 @@ io.on("connection", function(socket){
     });
     
     socket.on("dbResult", function(data){
-    console.log(data.temp);
-    io.emit("dbResult", data.temp);
+    console.log(data);
+    io.emit("dbResult", data);
     });
     
 });
