@@ -36,7 +36,12 @@
         socket.emit("readDB");
         
         socket.on("dbResult", function(data){
-                  document.getElementById("display").innerHTML = data;
+                  var html='';
+        for (var i=0; i<data.length; i++) {
+          html += data[i].firstname + ' ' + data[i].lastname + '<br>';
+        }  
+        document.getElementById("display").innerHTML = html;
+        console.log(data);
                   });
         
         //Chart
