@@ -32,7 +32,10 @@
         var socket = io.connect('/'); 
         socket.emit("readDB");
         console.log("readDB");
-    
+        
+        socket.on("dbResult", funtion(dbResult){
+                  console.log("DB Result");
+                  });
         
         //Chart
         let myChart = document.getElementById('myChart').getContext('2d');
