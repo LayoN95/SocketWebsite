@@ -27,6 +27,7 @@ io.on("connection", function(socket){
     console.log("State Changed: " + state);
     io.emit("updateState", state);
   });
+  
 	socket.on("sensors", function(sensor){
 	console.log("sensor id: " + sensor);
 	io.emit("sensorID", sensor);

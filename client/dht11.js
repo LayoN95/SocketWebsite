@@ -2,6 +2,7 @@ exports.start = function() {
 var socket = require('socket.io-client')('http://192.168.1.112:3000'),
 	dht11 = require('node-dht-sensor');
 var temp, humid;
+var dbResult[];
 
 
 //Polaczenie z baza danych
@@ -37,6 +38,12 @@ function read() {
 	sendDB();
 };
 
+  socket.on("readDB", function(){
+    readDB();
+    console.log(result);
+    console.log("readDB");
+      console.log("readDB");
+  });    
 
 //Przeslanie danych do bazy 
 function sendDB() {
@@ -50,4 +57,12 @@ function sendDB() {
 		console.log("1 record inserted");
 });
 };
+    
+function readDB() {
+	var sql = ("SELECT * FROM `DHT11`");
+    con.query(sql, function(err, result) {
+		if(err) throw err;
+        dbResult[]=result;
+		console.log(dbResult);  
+}
 };
