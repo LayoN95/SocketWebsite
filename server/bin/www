@@ -25,7 +25,7 @@ io.on("connection", function(socket){
 
   socket.on("stateChanged", function(state){
     console.log("State Changed: " + state);
-    io.emit("updateState", state);
+    io.emit("kitchenState", state);
   });
   
 	socket.on("sensors", function(sensor){
