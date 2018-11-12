@@ -14,8 +14,10 @@
             <a href="dht-11.html">Wizualizacja</a>
             <a href="dht-11.html">Sensor DHT-11</a>
             <a href="control.html">Sterowanie</a>
-              </div>
- 
+      
+</div>
+
+    <div id="display"></div>
     <div class="container" style="height: 400px; width: 600px;">
         <canvas id="myChart"></canvas>
         <canvas id="myChart2"></canvas>
@@ -29,6 +31,7 @@
             
         //Database
     
+            
         var socket = io.connect('/'); 
         socket.emit("readDB");
         
