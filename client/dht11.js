@@ -40,7 +40,7 @@ function read() {
 };
  
 socket.on("readDB", function(){
-    console.log("readDB from dht11");
+    console.log("readDB from dht11" + dbResult);
     socket.emit("dbResult", dbResult);
 });
 
