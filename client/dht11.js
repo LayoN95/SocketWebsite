@@ -65,4 +65,4 @@ function readDB() {
         dbResult=result;
 		console.log(dbResult);  
 }
-};
+)};
