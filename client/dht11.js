@@ -42,7 +42,7 @@ function read() {
 socket.on("readDB", function(){
     readDB();
     console.log("readDB from dht11" + dbResult);
-    socket.emit("dbResult", dbResult);
+    socket.emit("dbResult", {"temp": dbResult});
 });
 
 //Przeslanie danych do bazy 
