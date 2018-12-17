@@ -41,6 +41,10 @@ body {
 /*
 Menu
 */
+.menu {
+    width: 600px;
+    margin: auto;
+}
 
 ul {
     list-style-type: none;
@@ -82,8 +86,8 @@ li a:hover {
   vertical-align: top;
 }
 .cover-container {
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 0 auto;
+  margin-left: 0 auto;
 }
 
 /* Padding for spacing */
@@ -364,11 +368,16 @@ li a:hover {
 }
 
 .visualization {
+    margin: auto;
+  
+
+    align-content: center;
     border: 5px solid;
     border-color: aqua;
-    background: url('../images/bg.jpg');
-    width: 700px;
-    height: 650px;
+    background: url('../images/makieta.png');
+    background-size: 900px 691px;
+    width: 900px;
+    height: 691px;
 }
 
 .bathroom {
@@ -377,38 +386,43 @@ li a:hover {
     border: 1px solid;
     border-color: black;
     float: left;
-    margin: 60px;
-    margin-top: 100px;
+    margin-top: 470px;
+    margin-left: 120px;
 }
 .bedroom1 {
     border: 1px solid;
     border-color: black;
     float: left;
-    margin: 50px;
-    margin-top: 100px;
+    margin-top: 470px;
+    margin-left: 60px;
 }
 .bedroom2 {
     border: 1px solid;
     border-color: black;
     float: right;
-    margin: 65px;  
-    margin-top: 100px;
+      
+    margin-top: 470px;
+    margin-right: 160px;
 }
 
 .kitchen {
     border: 1px solid;
     border-color: black;
     float: left;
-    margin-top: 200px;
-    margin: 200px;
+    margin-top: 270px;
+    margin-left: -100px;
+
+ 
 }
 
 .livingroom {
     border: 1px solid;
     border-color: black;
-    margin-top: 300px;
-    margin: 70px;
     float: right;
+    margin-top: 270px;
+    margin-right: -80px;
+    
+    
 }
 
 .kitchenswitch {
