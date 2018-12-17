@@ -42,6 +42,7 @@ body {
 Menu
 */
 .menu {
+    align-content: center;
     width: 600px;
     margin: auto;
 }

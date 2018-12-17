@@ -2,6 +2,7 @@
 <HEAD>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <link href="stylesheets/style.css" rel="stylesheet">
     <title>Historia</title>
 </HEAD>
@@ -13,18 +14,14 @@
             <ul>
             <li><a href="index.html">Strona Główna</a></li>
             <li><a href="dht-11.html">Wizualizacja</a></li>
-            <li><a href="dht-11.html">Sensor DHT-11</a></li>
             <li><a href="control.html">Sterowanie</a></li>
             <li><a href="chart.html">Wykresy</a></li>
             </ul>
               </div>
 
-    <div id="display"></div>
-        <div class="container" style="height: 400px; width: 600px;">
-            <canvas id="myChart"></canvas>
-            <canvas id="myChart2"></canvas>
-            </div>
-    </div>
+<div class="container">
+    <canvas id="myChart"></canvas>
+  </div>    </div>
 
 
              
@@ -33,87 +30,69 @@
 
         <script type="text/javascript">
             
-        //Database
-    
-        var tab;   
-        var socket = io.connect('/'); 
-        socket.emit("readDB");
-        
-        socket.on("dbResult", function(data){
-                  var html='';
-        for (var i=0; i<data.length; i++) {
-          html += data[i].temperature + '<br>';
-            tab = data;
-        }  
-        document.getElementById("display").innerHTML = html;
-        console.log(data);
-        console.log(tab);
-                  });
-        
-        //Chart
-        let myChart = document.getElementById('myChart').getContext('2d');
-    
-        
-        //Oprions
-        Chart.defaults.global.defaultFontFamily = 'Lato';
-        Chart.defaults.global.defaultFontSize = 15;
-        Chart.defaults.global.defaultFontColor = '#000'
-        
-        let massPopChart = new Chart(myChart, {
-            type: 'line',
-            data:{
-                labels:['8:00','8:10','8:20'],
-                datasets:[{
-                    label:'Population',
-                    data:[
-                        617594,
-                        181045,
-                        153060,
-                        106519,
-                        105162,
-                        95072
-                        ],
-                    backgroundColor:[
-                        'rgba(255, 99, 132, 0.6)',
-                        'rgba(54, 162, 235, 0.6)',
-                        'rgba(255, 206, 86, 0.6)',
-                        'rgba(75, 192, 192, 0.6)',
-                        'rgba(153, 102, 255, 0.6)',
-                        'rgba(255, 159, 64, 0.6)',
-                        'rgba(255, 99, 132, 0.6)'
-                    ],
-                    borderWidth:1,
-                    borderColor:'#000',
-                    hoverBorderWidth: 3,
-                    hoverBorderColor:'#000'
-                }]
-            },
-            oprions:{
-                title:{
-                    distplay: true,
-                    text: 'Largest Cities In Massachusetts',
-                    fontSize:25
-                },
-                legend:{
-                    display: true,
-                    position:'right',
-                    labels:{
-                        fontColor:'#000'
-                    }
-                },
-                layout:{
-                    padding:{
-                        left:50,
-                        right:0,
-                        botton:0,
-                        top:0
-                    }
-                },
-                tooltips:{
-                    enabled:true
-                }
-            }
-        });
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = 'black';
+
+    let massPopChart = new Chart(myChart, {
+      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
+        datasets:[{
+          label:'Temperature',
+          data:[
+            23.8,
+            22.8,
+            21.8,
+            22.8,
+            22.8,
+            23.8
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'DHT-11',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
                
     </script>
 </BODY>
