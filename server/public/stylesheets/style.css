@@ -391,9 +391,10 @@ li a:hover {
 }
 .bedroom2 {
     float: right;
-      
+     width: 200px;
+    height: 50px;  
     margin-top: 470px;
-    margin-right: 160px;
+    margin-right: 100px;
 }
 
 .kitchen {
