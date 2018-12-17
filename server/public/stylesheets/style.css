@@ -386,6 +386,8 @@ li a:hover {
 }
 .bedroom1 {
     float: left;
+     width: 200px;
+    height: 150px;
     margin-top: 470px;
     margin-left: 250px;
 }
@@ -410,6 +412,7 @@ li a:hover {
 .livingroom {
    
     float: right;
+    
     margin-top: 270px;
     margin-right: -80px;
     
