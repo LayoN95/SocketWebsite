@@ -19,18 +19,26 @@
             </ul>
               </div>
 
-<div class="container">
-    <canvas id="myChart"></canvas>
+<div class="container" style="margin-top: 30px;">
+    <div style="margin-left: 50px; float:left; width: 480px; height: 300px;">
+         <canvas id="myChart"></canvas>
+    </div>
+    <div style="margin-right: 50px;float:right; width: 480px; height: 300px;">
+         <canvas id="myChart2"></canvas>
+    </div>
+
   </div>    </div>
 
 
-             
-    
+
+
     <script src="/socket.io/socket.io.js"></script>
 
         <script type="text/javascript">
-            
-    let myChart = document.getElementById('myChart').getContext('2d');
+        let myChart = document.getElementById('myChart').getContext('2d');
+        let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+
 
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Lato';
@@ -42,7 +50,7 @@
       data:{
         labels:['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
         datasets:[{
-          label:'Temperature',
+          label:'Temperatura DHT-11',
           data:[
             23.8,
             22.8,
@@ -53,12 +61,6 @@
           ],
           //backgroundColor:'green',
           backgroundColor:[
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-            'rgba(255, 206, 86, 0.6)',
-            'rgba(75, 192, 192, 0.6)',
-            'rgba(153, 102, 255, 0.6)',
-            'rgba(255, 159, 64, 0.6)',
             'rgba(255, 99, 132, 0.6)'
           ],
           borderWidth:1,
@@ -67,33 +69,36 @@
           hoverBorderColor:'#000'
         }]
       },
-      options:{
-        title:{
-          display:true,
-          text:'DHT-11',
-          fontSize:25
-        },
-        legend:{
-          display:true,
-          position:'right',
-          labels:{
-            fontColor:'#000'
-          }
-        },
-        layout:{
-          padding:{
-            left:50,
-            right:0,
-            bottom:0,
-            top:0
-          }
-        },
-        tooltips:{
-          enabled:true
-        }
-      }
+
     });
-               
+
+    let massPopChart2 = new Chart(myChart2, {
+      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
+        datasets:[{
+          label:'Wilgotność DHT-11',
+          data:[
+            23.8,
+            22.8,
+            21.8,
+            22.8,
+            22.8,
+            23.8
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+
+    });
+
     </script>
 </BODY>
 </HTML>

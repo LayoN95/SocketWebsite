@@ -1,7 +1,9 @@
 <HTML>
 <HEAD>
-	<link href="stylesheets/style.css" rel="stylesheet">
-        <title>Sterowanie</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+            <title>Sterowanie</title>
 
 </HEAD>
 <BODY>
@@ -18,45 +20,59 @@
 
             </ul>
               </div>
-            
-            <div class="control-wrapper">
-                <h1>Kuchnia</h1>
-            <div class="onoffswitch">
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                <label class="onoffswitch-label" for="myonoffswitch">
-                <span class="onoffswitch-inner"></span>
-                <span class="onoffswitch-switch"></span>
-                </label>
+							<div class="control-wrapper" style="margin: 150px;">
+							<table style="margin: 0;">
+								<tr><td>
+		                <div style="border-style: solid; width: 200px; height: 75px;" >
+											<img src="images/lightbulb.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;"/>
+											<a>Światło</a>
+										</div></td><td><div style="border-style: solid; width: 200px; height: 75px;" >
+											<img src="images/humidity.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
+											<a>Wilgotność</a>
+										</div></td><td><div style="border-style: solid; width: 200px; height: 75px;" >
+											<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
+											<a>Alarm</a>
+										</div></td></tr>
+										<tr><td>
+				                <div style="border-style: solid; width: 200px; height: 75px;" >
+													<img src="images/temperature.png" style="vertical-align: middle; widht: 50px; height: 50px;"/>
+													<a>Temperatura</a>
+												</div></td><td><div style="border-style: solid; width: 200px; height: 75px;" >
+													<img src="images/kettleoff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
+													<a>Czajnik</a>
+												</div></td><td><div style="border-style: solid; width: 200px; height: 75px;" >
+													<img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
+													<a>Okno</a>
+												</div></td></tr>
+							</table>
+
+
+
+
+
             </div>
-                </div>
-                <h1>Łazienka</h1>
-                <div class="bathroomswitch" style="margin:0px auto;">
-                    <div class="switch demo3">
-                        <input type="checkbox" id="bathroomonoff">
-                        <label><i></i></label>
-                    </div>
-                </div>
+
         </div>
-    
-    
+
+
             <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
             <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
             <script src="/socket.io/socket.io.js"></script>
 
             <script type="text/javascript">
-            var socket = io.connect('/'); 
-    
+            var socket = io.connect('/');
+
             //Obsluga sterowania portem GPIO
             $("#kitchenonoff").change(function(){
               socket.emit("kitchenChanged", this.checked);
               console.log("KitchenStateChanged");
             });
-                
+
             $("#bathroomonoff").change(function(){
               socket.emit("bathroomChanged", this.checked);
               console.log("BathroomStateChanged");
             });
-                
+
             </script>
 
 </BODY>

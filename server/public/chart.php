@@ -18,7 +18,6 @@
  
     <div class="container" style="height: 400px; width: 600px;">
         <canvas id="myChart"></canvas>
-        <canvas id="myChart2"></canvas>
     </div>
     
         <script language="php"> 
