@@ -55,9 +55,9 @@ io.on("connection", function(socket){
     io.emit("dbResult", data);
     });
     
-    socket.on("intruderValue", function(data){
-    console.log("intruderDetecter" + data);
-    io.emit("intruderValue", data);
+    socket.on("intruderValue", function(value){
+    console.log("intruderDetecter" + value);
+    io.emit("intruderValue", value);
     });
     
 });

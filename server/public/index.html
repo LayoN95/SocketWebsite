@@ -77,9 +77,9 @@
 	});	  
         
 //Czujnik PIR
-        socket.on("intruderValue", function(data){
-        console.log(data);    
-        $("#dht11humid").text(data);    
+        socket.on("intruderValue", function(value){
+        console.log(value);    
+        $("#dht11humid").text(value);    
         })
 
 
