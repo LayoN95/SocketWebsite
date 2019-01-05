@@ -73,8 +73,13 @@
 //Wyswietlenie danych z czujnika DHT11
     socket.on("dht11Sensor", function(data){
 	$("#dht11temp").text(data.temp);
-	$("#dht11humid").text(data.humid);
-	});	    
+	//$("#dht11humid").text(data.humid);
+	});	  
+        
+//Czujnik PIR
+        socket.on("intruderValue", function(data){
+        $("#dht11humid").text(data);    
+        })
 
 
 
