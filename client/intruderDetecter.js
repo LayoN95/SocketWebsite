@@ -10,8 +10,7 @@ pir.watch(function(err, value) {
     count++;
     console.log('Intruder detected' + count);
     
-    socket.emit("intruderValue", count);
-    value = 0;
+    socket.emit("intruderValue", {"value": value});
 });
     
     };
