@@ -41,7 +41,7 @@
 		<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
 		<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
 		<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
-        <tr><td><h1 id="alert"></h1></td></tr>
+        <tr><td><h1 id="alert"></h1></td><td><h1 id="hcsr04"></h1></td></tr>
 		</table>
                   
               </div>
@@ -81,14 +81,17 @@
         socket.on("intruderValue", function(value){
         console.log(value);
             if(value==1) {
-                $("#alert").text("<img src="images/alerton.png">");    
+                $("#alert").text(src="images/alerton.png");    
             } else {
-              $("#alert").text("<img src="images/alerton.png">");   
+              $("#alert").text(src="images/alertoff.png");   
             }
         })
 
-
-
+//HC-SR04
+        socket.on("hcsr04distance", function(value){
+            console.log("hcsr04distance:" + value);
+            $("#hcsr04").text(value.value);
+        });
 
     </script>
 
