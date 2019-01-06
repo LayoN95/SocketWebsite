@@ -105,7 +105,7 @@
                 socket.emit("dbRead");
             }
             socket.on("dbResult", function(value){
-                console.logo(humidity.value);
+                console.logo(value.humidity);
                 
             });
 //Czujnik ruchu HCSR-04
