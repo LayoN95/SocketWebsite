@@ -61,12 +61,12 @@
 //Obsluga sterowania portem GPIO
     $("#myonoffswitch").change(function(){
       socket.emit("stateChanged", this.checked);
-      console.log("StateChanged");
+      //console.log("StateChanged");
     });
     
 //Wyswietlenie temperatury pobranej z czujnikow DS18B20			
     socket.on("updateTemp", function(data){
-	console.log(data);
+	//console.log(data);
         $("#" + data.id).text(data.value);
               
     });
@@ -89,7 +89,7 @@
 
 //HC-SR04
         socket.on("hcsr04distance", function(value){
-            console.log("hcsr04distance: " + value);
+            //console.log("hcsr04distance: " + value);
             $("#hcsr04").text(value);
         });
 

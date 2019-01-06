@@ -58,7 +58,7 @@ io.on("connection", function(socket){
     });
     
     socket.on("intruderValue", function(value){
-    console.log("intruderDetecter: " + value.value);
+    //console.log("intruderDetecter: " + value.value);
     io.emit("intruderValue", value.value);
     });
     
