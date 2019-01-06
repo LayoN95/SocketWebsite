@@ -32,16 +32,18 @@
                                 <div style="border-style: solid; width: 200px; height: 75px;" >
 								    <img src="images/humidity.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
 								    <a>Wilgotność</a>
+                                    <p id="dht11humid"></p>
 								</div></td>
                             <td>
                                 <div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
+								    <p id="alert"><img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/></p>
 								    <a>Alarm(czujka)</a>
 								</div></td></tr>
 										<tr><td>
 				                <div style="border-style: solid; width: 200px; height: 75px;" >
 								    <img src="images/temperature.png" style="vertical-align: middle; widht: 50px; height: 50px;"/>
 								    <a>Temperatura</a>
+                                    <p id="dht11temp"></p>
 								</div></td><td>
                                 <div style="border-style: solid; width: 200px; height: 75px;" >
 									<img src="images/kettleoff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
@@ -95,12 +97,29 @@
             <script src="/socket.io/socket.io.js"></script>
 
             <script type="text/javascript">
+            
             var socket = io.connect('/');
-
+                
+//Czujnik ruchu HCSR-04
             socket.on("hcsr04distance", function(value){
-            //console.log("hcsr04distance: " + value);
-            $("#motion-sensor").text(value);
-        });
+                //console.log("hcsr04distance: " + value);
+                $("#motion-sensor").text(value);
+                });
+//Czujnik DHT-11
+            socket.on("dht11Sensor", function(data){
+	           $("#dht11temp").text(data.temp);
+	           $("#dht11humid").text(data.humid);
+	           });	
+        
+//Czujnik PIR
+            socket.on("intruderValue", function(value){
+            console.log(value);
+                if(value==1) {
+                    $("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');    
+                } else {
+                $("#alert").html('<img src="images/alertoff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');   
+                    }
+            });
                 
             </script>
 
