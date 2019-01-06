@@ -122,11 +122,15 @@
             });
 //Światło w kuchni
             function klight(){
-                var state = 1;  
+                var state;  
                 console.log("CLICK!");
-                      
-                  socket.emit("stateChanged", state);
-                state = 0;
+                if (state == 1) {
+                  socket.emit("stateChanged", 0);  
+                } else {
+                    socket.emit("stateChanged", 1);
+                }
+                    
+                  
             };    
                 
             </script>
