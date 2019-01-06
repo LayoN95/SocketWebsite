@@ -104,6 +104,10 @@
             function getData(){
                 socket.emit("dbRead");
             }
+            socket.on("dbResult", function(value){
+                console.logo(humidity.value);
+                
+            });
 //Czujnik ruchu HCSR-04
             socket.on("hcsr04distance", function(value){
                 //console.log("hcsr04distance: " + value);
