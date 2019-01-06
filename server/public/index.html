@@ -41,6 +41,7 @@
 		<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
 		<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
 		<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
+        <tr><td><img id="alert" src="images/alertoff.png"></td></tr>
 		</table>
                   
               </div>
@@ -73,13 +74,13 @@
 //Wyswietlenie danych z czujnika DHT11
     socket.on("dht11Sensor", function(data){
 	$("#dht11temp").text(data.temp);
-	//$("#dht11humid").text(data.humid);
+	$("#dht11humid").text(data.humid);
 	});	  
         
 //Czujnik PIR
         socket.on("intruderValue", function(value){
         console.log(value);    
-        $("#dht11humid").text(value);    
+        $("#alert").text(src="images/alerton.png");    
         })
 
 
