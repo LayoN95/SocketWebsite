@@ -1,4 +1,4 @@
-var socket = require('socket.io-client')('http://192.168.43.74:3000'),
+var socket = require('socket.io-client')('http://192.168.43.74:3000');
 var dbResult;
 var mysql = require('mysql');
 var con = mysql.createConnection({
