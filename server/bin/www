@@ -12,14 +12,14 @@ var io = require("socket.io").listen(server);
 
 //uruchonienie czujnikow
 
-//var dht11Plugin = require('./../../client/dht11.js');
-//var ds18b20Plugin = require('./../../client/ds18b20.js');
-//var ledPlugin = require('./../../client/app.js');
+var dht11Plugin = require('./../../client/dht11.js');
+var ds18b20Plugin = require('./../../client/ds18b20.js');
+var ledPlugin = require('./../../client/app.js');
 var intruderDetecter = require('./../../client/intruderDetecter.js');
 
-dht11Plugin.start();
-ds18b20Plugin.start();
-ledPlugin.start();
+//dht11Plugin.start();
+//ds18b20Plugin.start();
+//ledPlugin.start();
 intruderDetecter.start();
 
 
