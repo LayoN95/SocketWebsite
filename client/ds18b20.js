@@ -13,7 +13,7 @@ socket.on("connect", function () {
     ds18b20.sensors(function (err, id) {
         sensorId = id;
         socket.emit("sensors", id); //send sensor ID's to clients
-        console.log("Sensors" + id);
+        //console.log("Sensors" + id);
     });
  
     setInterval(function () {
@@ -24,7 +24,7 @@ socket.on("connect", function () {
                 
                 //przesłanie odczytów temperatury
                 socket.emit("temps", {"id": id, "value": value});
-                console.log("temperature" + value + " id" + id);
+                //console.log("temperature" + value + " id" + id);
  
             });
         });

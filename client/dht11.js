@@ -31,7 +31,7 @@ read();
 //Odczyt danych z DHT11
 function read() {
 	var readout = dht11.read();
-	console.log("Temperatura: " + readout.temperature.toFixed(2) + "C " + "Wilgotnosc: " + readout.humidity.toFixed(2) + "%");
+	//console.log("Temperatura: " + readout.temperature.toFixed(2) + "C " + "Wilgotnosc: " + readout.humidity.toFixed(2) + "%");
 	temp = readout.temperature.toFixed(2);
 	humid = readout.humidity.toFixed(2);
 	socket.emit("dht11", {"temperature": readout.temperature.toFixed(2), "humidity": readout.humidity.toFixed(2)});
@@ -53,11 +53,11 @@ function sendDB() {
 	var dateTime = require('node-datetime');
 	var dt = dateTime.create();
 	var date = dt.format('Y-m-d H:M:S');
-	console.log(date.toString());
+	//console.log(date.toString());
 	var sql = ("INSERT INTO `DHT11` (id, temperature, humidity, date) VALUES ('',"+temp+","+humid+",NOW())");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
-		console.log("1 record inserted");
+		//console.log("1 record inserted");
 });
 };
 

@@ -18,7 +18,7 @@ socket.on("connect", function(){
   console.log("Connected to server");
     
   socket.on("updateState", function(state){
-    console.log("The new state is: " + state);
+    //console.log("The new state is: " + state);
    if(state == true){
    Kitchen_LED.writeSync(1);
    } else {
@@ -28,7 +28,7 @@ socket.on("connect", function(){
     
         
   socket.on("bathroomState", function(state){
-    console.log("The new state is: " + state);
+    //console.log("The new state is: " + state);
    if(state == true){
    Bathroom_LED.writeSync(1);
    } else {
