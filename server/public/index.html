@@ -80,9 +80,12 @@
 //Czujnik PIR
         socket.on("intruderValue", function(value){
         console.log(value);
-        $("p").html('<img src="images/alerton.png">');    
-
-        });
+            if(value==1) {
+                $("p").html('<img src="images/alert.png">');    
+            } else {
+              $("p").html('<img src="images/alertoff.png">');   
+            }
+        })
 
 //HC-SR04
         socket.on("hcsr04distance", function(value){
