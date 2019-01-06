@@ -10,7 +10,7 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
 
-socket.on("connect", function(){
+socket.on("connection", function(){
      var sql = ("SELECT temperature FROM `DHT11` ORDER BY id DESC LIMIT 10");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
