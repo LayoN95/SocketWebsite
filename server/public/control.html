@@ -24,7 +24,7 @@
 				    <table style="margin: 0;">
 				        <tr><td>
 		                  <div style="border-style: solid; width: 200px; height: 75px;" >
-				            <img src="images/lightbulboff.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;"/>
+				            <p id="kitchen"><img src="images/lightbulboff.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;"/></p>
 								<a id="kitchenlight" onclick="klight()">Światło kuchnia</a>
 				          </div>
                             </td>
@@ -125,12 +125,14 @@
             function klight(){  
                 console.log("CLICK!" + state);
                 if (state == 1) {
-                  socket.emit("stateChanged", 0);  
+                  socket.emit("stateChanged", 0); 
+                    $("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
                     console.log(state);
                     state = 0;
 
                 } else {
                     socket.emit("stateChanged", 1);
+                    $("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
                     console.log(state);
                     state = 1;
                 }
