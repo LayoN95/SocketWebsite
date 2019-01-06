@@ -127,10 +127,12 @@
                 if (state == 1) {
                   socket.emit("stateChanged", 0);  
                     console.log(state);
+                    state = 0;
 
                 } else {
                     socket.emit("stateChanged", 1);
                     console.log(state);
+                    state = 1;
                 }
                     
                   
