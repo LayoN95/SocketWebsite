@@ -11,7 +11,7 @@ var con = mysql.createConnection({
 });
 
 socket.on("dbRead", function(){
-     var sql = ("SELECT temperature FROM `DHT11` ORDER BY id DESC LIMIT 10");
+     var sql = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 10");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
         socket.emit("dbResult", result);
