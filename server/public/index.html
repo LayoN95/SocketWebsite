@@ -79,8 +79,12 @@
         
 //Czujnik PIR
         socket.on("intruderValue", function(value){
-        console.log(value);    
-        $("#alert").text(src="images/alerton.png");    
+        console.log(value);
+            if(value==1) {
+                $("#alert").text(src="images/alerton.png");    
+            } else {
+              $("#alert").text(src="images/alertoff.png");   
+            }
         })
 
 
