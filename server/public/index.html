@@ -41,7 +41,7 @@
 		<tr><td colspan="2"><h1>DHT11 Sensor</h1></td></tr>
 		<tr><td><h1>Temperatura:</h1></td><td><h1>Wilgotnosc powietrza:</h1></td></tr>
 		<tr><td><h1 id="dht11temp"></h1></td><td><h1 id="dht11humid"></h1></td></tr>
-        <tr><td><p>Image</p></td><td><h1 id="hcsr04">DIST</h1></td></tr>
+        <tr><td><p id="alert">Image</p></td><td><h1 id="hcsr04">DIST</h1></td></tr>
 		</table>
                   
               </div>
@@ -81,9 +81,9 @@
         socket.on("intruderValue", function(value){
         console.log(value);
             if(value==1) {
-                $("p").html('<img src="images/alert.png">');    
+                $("#alert").html('<img src="images/alert.png">');    
             } else {
-              $("p").html('<img src="images/alertoff.png">');   
+              $("#alert").html('<img src="images/alertoff.png">');   
             }
         })
 
