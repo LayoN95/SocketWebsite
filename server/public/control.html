@@ -54,6 +54,7 @@
                                 <td><div style="border-style: solid; width: 200px; height: 75px;" >
 								    <img src="images/motion-sensor-off.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
 								    <a>Sensor ruchu</a>
+                                    <p id="motion-sensor">0</p>
 							</div></td>
                                 <td><div style="border-style: solid; width: 200px; height: 75px;" >
 								    <img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
@@ -96,17 +97,11 @@
             <script type="text/javascript">
             var socket = io.connect('/');
 
-            //Obsluga sterowania portem GPIO
-            $("#kitchenonoff").change(function(){
-              socket.emit("kitchenChanged", this.checked);
-              console.log("KitchenStateChanged");
-            });
-
-            $("#bathroomonoff").change(function(){
-              socket.emit("bathroomChanged", this.checked);
-              console.log("BathroomStateChanged");
-            });
-
+            socket.on("hcsr04distance", function(value){
+            //console.log("hcsr04distance: " + value);
+            $("#motion-sensor").text(value);
+        });
+                
             </script>
 
 </BODY>
