@@ -6,7 +6,7 @@
             <title>Sterowanie</title>
 
 </HEAD>
-<BODY>
+<BODY onload="getData()">
 
         <div class="site-wrapper">
             <h1 class="cover-heading" style="font-size: 60px;">Sterowanie</h1>
@@ -97,18 +97,13 @@
             <script src="/socket.io/socket.io.js"></script>
 
             <script type="text/javascript">
-                
-                var mysql = require('mysql');
-                var con = mysql.createConnection({
-	               host: "localhost",
-	               user: "SmartHome",
-	               password: "raspberry",
-	               database: "SmartHome"
-                    });
             
             var socket = io.connect('/');
             var state = 0;
-                
+//Pozyskanie danych
+            function getData(){
+                socket.emit("dbRead");
+            }
 //Czujnik ruchu HCSR-04
             socket.on("hcsr04distance", function(value){
                 //console.log("hcsr04distance: " + value);
