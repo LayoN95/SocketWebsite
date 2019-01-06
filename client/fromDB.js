@@ -15,7 +15,7 @@ socket.on("connect", function(){
 	con.query(sql, function(err, result) {
 		if(err) throw err;
         socket.emit("dbResult", result);
-        console.log(dbResult);
+        console.log(result);
 }); 
 });
 };
