@@ -25,7 +25,7 @@ dht11.initialize(11,12);
 
 var interval = setInterval(function () {
 read();
-}, 3000);
+}, 60000);
 
 
 //Odczyt danych z DHT11
