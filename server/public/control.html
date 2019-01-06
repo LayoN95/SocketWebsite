@@ -99,6 +99,7 @@
             <script type="text/javascript">
             
             var socket = io.connect('/');
+            var state = 0;
                 
 //Czujnik ruchu HCSR-04
             socket.on("hcsr04distance", function(value){
@@ -121,8 +122,7 @@
                     }
             });
 //Światło w kuchni
-            function klight(){
-                var state;  
+            function klight(){  
                 console.log("CLICK!" + state);
                 if (state == 1) {
                   socket.emit("stateChanged", 0);  
