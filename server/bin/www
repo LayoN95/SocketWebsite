@@ -25,7 +25,7 @@ ds18b20Plugin.start();
 ledPlugin.start();
 intruderDetecter.start();
 hcsr04.start();
-fromDB.start();
+database.start();
 
 
 io.on("connection", function(socket){
