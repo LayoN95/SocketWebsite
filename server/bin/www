@@ -30,6 +30,7 @@ database.start();
 
 io.on("connection", function(socket){
   console.log("Client Connected");
+  socket.emit("dbRead");
 
   socket.on("stateChanged", function(state){
     //console.log("State Changed: " + state);
