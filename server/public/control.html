@@ -123,11 +123,14 @@
 //Światło w kuchni
             function klight(){
                 var state;  
-                console.log("CLICK!");
+                console.log("CLICK!" + state);
                 if (state == 1) {
                   socket.emit("stateChanged", 0);  
+                    console.log(state);
+
                 } else {
                     socket.emit("stateChanged", 1);
+                    console.log(state);
                 }
                     
                   
