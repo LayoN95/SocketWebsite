@@ -19,8 +19,8 @@ var intruderDetecter = require('./../../client/intruderDetecter.js');
 var hcsr04 = require('./../../client/hc-sr04.js');
 
 dht11Plugin.start();
-//ds18b20Plugin.start();
-//ledPlugin.start();
+ds18b20Plugin.start();
+ledPlugin.start();
 intruderDetecter.start();
 hcsr04.start();
 
