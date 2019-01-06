@@ -97,6 +97,14 @@
             <script src="/socket.io/socket.io.js"></script>
 
             <script type="text/javascript">
+                
+                var mysql = require('mysql');
+                var con = mysql.createConnection({
+	               host: "localhost",
+	               user: "SmartHome",
+	               password: "raspberry",
+	               database: "SmartHome"
+                    });
             
             var socket = io.connect('/');
             var state = 0;
