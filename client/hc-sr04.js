@@ -23,7 +23,7 @@ exports.start = function () {
             endTick = tick;
             diff = (endTick >> 0) - (startTick >> 0);
             dist = (diff/2/MICROSECDONDS_PER_CM);
-            console.log(dist);
+            //console.log(dist);
             socket.emit("hcsr04distance", {"value": dist.toFixed(1)});
 
         }

@@ -26,25 +26,25 @@ hcsr04.start();
 
 
 io.on("connection", function(socket){
-  console.log("Client Connected");
+  //console.log("Client Connected");
 
   socket.on("stateChanged", function(state){
-    console.log("State Changed: " + state);
+    //console.log("State Changed: " + state);
     io.emit("updateState", state);
   });
   
 	socket.on("sensors", function(sensor){
-	console.log("sensor id: " + sensor);
+	//console.log("sensor id: " + sensor);
 	io.emit("sensorID", sensor);
 });
 	socket.on("temps", function(data){
-	console.log("temp: " + data.value + "id: " + data.id);
+	//console.log("temp: " + data.value + "id: " + data.id);
 	io.emit("updateTemp", {"id": data.id, "value": data.value});
 	
 	});
 
 	socket.on("dht11", function(data){
-	console.log("dht11 temp: " + data.temperature); 
+	//console.log("dht11 temp: " + data.temperature); 
 	io.emit("dht11Sensor", {"temp": data.temperature, "humid": data.humidity});
 	});
     
@@ -53,7 +53,7 @@ io.on("connection", function(socket){
     });
     
     socket.on("dbResult", function(data){
-    console.log(data);
+    //console.log(data);
     io.emit("dbResult", data);
     });
     
@@ -63,7 +63,7 @@ io.on("connection", function(socket){
     });
     
     socket.on("hcsr04distance", function(value){
-    console.log("hcsr04distance: " + value.value);
+    //console.log("hcsr04distance: " + value.value);
     io.emit("hcsr04distance", value.value);
     });
     
