@@ -31,12 +31,14 @@ socket.on("connect", function(){
    Kitchen_LED.writeSync(1);
         var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT = true");
 	    con.query(sql, function(err, result) {
-		if(err) throw err;   
+		if(err) throw err;
+        });
    } else {
 	Kitchen_LED.writeSync(0);
         var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT = false");
 	    con.query(sql, function(err, result) {
-		if(err) throw err; 
+		if(err) throw err;
+        });
 	}
   });
     
