@@ -107,9 +107,16 @@
             }
             socket.on("dbResult", function(value){
                 document.getElementById("dht11humid").innerHTML = value[0].humidity;
-                document.getElementById("dht11temp").innerHTML = value[0].temperature;
+                document.getElementById("dht11temp").innerHTML = value[0].temperature;                
+            });
+            
+            socket.on("lightResult", function(value){
+               if (value[0].KITCHEN_LIGHT == true) {
+                    $("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
+               } else {
+                    $("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
 
-                
+               }
             });
 //Czujnik ruchu HCSR-04
             socket.on("hcsr04distance", function(value){

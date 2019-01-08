@@ -64,6 +64,11 @@ io.on("connection", function(socket){
     io.emit("dbResult", data);
     });
     
+    socket.on("lightResult", function(data){
+    //console.log(data);
+    io.emit("lightResult", data);
+    });
+    
     socket.on("intruderValue", function(value){
     //console.log("intruderDetecter: " + value.value);
     io.emit("intruderValue", value.value);
