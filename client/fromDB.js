@@ -26,7 +26,7 @@ socket.on("dbRead", function(){
 }); 
     //socket.emit("dbResult", {"light": light_result, "dht11": dht11_result});
             socket.emit("dbResult", {"dht11": dht11_result});
-            console.log("DHT11_RESULT");
+            console.log(dht11_result);
 
 });
 };
