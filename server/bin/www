@@ -60,8 +60,8 @@ io.on("connection", function(socket){
     });
     
     socket.on("dbResult", function(data){
-    //console.log(data);
-    io.emit("dbResult", data);
+    console.log(data.dht11);
+    io.emit("dbResult", data.dht11);
     });
     
     socket.on("intruderValue", function(value){
