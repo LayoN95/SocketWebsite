@@ -107,7 +107,7 @@
             }
             socket.on("dbResult", function(value){
                 document.getElementById("dbRecord").innerHTML = value.temperature + " Temperatura";
-                console.log(value.DHT11[0].temperature);
+                console.log(value);
                 
             });
 //Czujnik ruchu HCSR-04
