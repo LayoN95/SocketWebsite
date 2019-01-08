@@ -106,7 +106,7 @@
                 socket.emit("dbRead");
             }
             socket.on("dbResult", function(value){
-                console.log(document.getElementById("dbRecord").innerHTML = value + " Temperatura");
+                console.log(document.getElementById("dbRecord").innerHTML = value.temperature[0] + " Temperatura");
                 console.log(value);
                 
             });
