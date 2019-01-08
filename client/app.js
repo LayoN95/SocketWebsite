@@ -5,6 +5,14 @@ var LED = new Gpio(22, 'out');
 var Kitchen_LED = new Gpio(22, 'out');
 var Bathroom_LED = new Gpio(22, 'out');
 
+var mysql = require('mysql');
+var con = mysql.createConnection({
+	host: "localhost",
+	user: "SmartHome",
+	password: "raspberry",
+	database: "SmartHome"
+});
+
 exports.start = function() {
 process.on("SIGINT", function(){
  
@@ -21,8 +29,14 @@ socket.on("connect", function(){
     //console.log("The new state is: " + state);
    if(state == true){
    Kitchen_LED.writeSync(1);
+        var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT = true");
+	    con.query(sql, function(err, result) {
+		if(err) throw err;   
    } else {
 	Kitchen_LED.writeSync(0);
+        var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT = false");
+	    con.query(sql, function(err, result) {
+		if(err) throw err; 
 	}
   });
     
