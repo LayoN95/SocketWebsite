@@ -18,7 +18,7 @@ socket.on("dbRead", function(){
         console.log("Object: " + result.humidity);
         console.log("Object: " + result.temperature);
 
-        console.log("rezultat: " + result);
+        console.log(result);
 }); 
 });
 };
