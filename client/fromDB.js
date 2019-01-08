@@ -16,7 +16,7 @@ socket.on("dbRead", function(){
 		if(err) throw err;
         socket.emit("dbResult", result);
         console.log("Object: " + result[0].humidity);
-        console.log("Object: " + result[1].temperature);
+        console.log("Object: " + result[0].temperature);
 
         console.log(result);
 }); 
