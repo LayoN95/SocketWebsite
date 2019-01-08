@@ -15,8 +15,10 @@ socket.on("dbRead", function(){
 	con.query(sql, function(err, result) {
 		if(err) throw err;
         socket.emit("dbResult", result);
-        console.log("Object: " + result["temperature"];
-        //console.log(result);
+        console.log("Object: " + result.humidity);
+        console.log("Object: " + result.temperature);
+
+        console.log("rezultat: " + result);
 }); 
 });
 };
