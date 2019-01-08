@@ -10,7 +10,7 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
     
-var dht11_result, light_result;
+var dht11_result = 1, light_result;
 
 socket.on("dbRead", function(){
      var DHT11 = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 1");
