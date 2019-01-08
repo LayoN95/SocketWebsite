@@ -28,11 +28,9 @@
             </ul>
               </div>
             <div class="setting-cover">
-                <form>
                     <input type="time" name="from" value="12:00">
                     <input type="time" name="to" value="24:00">  
                     <input type="submit" name="submit" value="Potwierdź">
-                </form>
             </div>
 
     </div>
@@ -46,6 +44,14 @@
     <script type="text/javascript">
     var socket = io.connect('/'); 
     
+    var submit = document.getElementById("submit");
+        submit.onclick = function(){
+            var from = document.getElementById("from").value;
+            var to = document.getElementById("to").value;
+            
+            console.log(from);
+            console.log(to);
+        }
 
     </script>
 
