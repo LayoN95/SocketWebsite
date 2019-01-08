@@ -29,7 +29,7 @@ socket.on("connect", function () {
         sensorId.forEach(function (id) {
  
             ds18b20.temperature(id, function (err, value) {
-                   var sql = ("INSERT INTO `DS18B20` (id, temperature, date) VALUES ('',"+value+","",NOW())");
+                   var sql = ("INSERT INTO `DS18B20` (id, temperature, date) VALUES ('',"+temperature+",NOW())");
 	               con.query(sql, function(err, result) {
                    if(err) throw err;
 	         	   //console.log("1 record inserted");
