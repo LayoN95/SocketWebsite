@@ -17,7 +17,7 @@ socket.on("dbRead", function(){
 	 con.query(DHT11, function(err, result) {
 		if(err) throw err;
         dht11_result = result; 
-        //socket.emit("dbResult", result);
+        socket.emit("dbResult", result);
 }); 
     var LIGHT = ("SELECT * FROM `LIGHTING`");
 	con.query(LIGHT, function(err, result) {
@@ -26,7 +26,7 @@ socket.on("dbRead", function(){
         //socket.emit("dbResult", result);
 
 }); 
-    socket.emit("dbResult", {"light": light_result, "dht11": dht11_result});
+    //socket.emit("dbResult", {"light": light_result, "dht11": dht11_result});
     
 });
 };
