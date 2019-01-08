@@ -16,13 +16,11 @@ socket.on("dbRead", function(){
      var DHT11 = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 1");
 	 con.query(DHT11, function(err, result) {
 		if(err) throw err;
-        dht11_result = result; 
         socket.emit("dbResult", result);
 }); 
     var LIGHT = ("SELECT * FROM `LIGHTING`");
 	con.query(LIGHT, function(err, result) {
 		if(err) throw err;
-        light_result = result;
         //socket.emit("dbResult", result);
 
 }); 
