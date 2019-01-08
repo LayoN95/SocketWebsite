@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Strona Główna</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+            <h1 class="cover-heading" style="font-size: 60px;">Smart Home</h1>
+              
+ 		<div class="menu">
+            <ul>
+            <li><a href="index.html">Strona Główna</a></li>
+            <li><a href="dht-11.html">Wizualizacja</a></li>
+            <li><a href="control.html">Sterowanie</a></li>
+            <li><a href="chart.html">Wykresy</a></li>
+            <li><a href="setting.html">Ustawienia</a></li>
+            </ul>
+              </div>
+            
+
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script type="text/javascript">
+    var socket = io.connect('/'); 
+    
+
+    </script>
+
+  </body>
+</html>
