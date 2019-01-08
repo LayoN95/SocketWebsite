@@ -106,7 +106,7 @@
                 socket.emit("dbRead");
             }
             socket.on("dbResult", function(value){
-                console.log(document.getElementById("dbRecord").innerHTML = value.humidity + " Temperatura");
+                console.log(document.getElementById("dbRecord").innerHTML = value[0].humidity + " Temperatura");
                 console.log(value);
                 
             });
