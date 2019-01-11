@@ -31,6 +31,7 @@ socket.on("time", function(time){
         } else {
             socket.emit("stateChanged", 0);
         }  
+        console.log(date);
     }, 15000);
     
 });
