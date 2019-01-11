@@ -20,8 +20,14 @@ socket.on("time", function(time){
     to = time.to;
     
     console.log(from, to);
+    turnLightsOn(from, to);
+   
     
-    var interval = setInterval(function () {
+});
+
+
+function turnLightsOn(from, to){
+ var interval = setInterval(function () {
     var dt = dateTime.create();
     var date = dt.format('H:M');    
         if (date >= from && date <= to)
@@ -32,13 +38,7 @@ socket.on("time", function(time){
             socket.emit("stateChanged", 0);
         }  
         console.log(date);
-    }, 15000);
-    
-});
-
-
-function turnLightsOn(from, to){
-  
+    }, 15000);  
 
 }
     
