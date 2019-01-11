@@ -24,6 +24,14 @@ socket.on("time", function(time){
     from = time.from;
     to = time.to;
     console.log(from, to);
+    
+    if (date >= from && date <= to)
+        {
+            socket.emit("stateChanged", 1);
+            {}
+        } else {
+            socket.emit("stateChanged", 0);
+        }
 });
 };
 
