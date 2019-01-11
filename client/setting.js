@@ -17,21 +17,28 @@ var con = mysql.createConnection({
     
 socket.on("time", function(time){
     
-
-    
-    console.log(date);
-
     from = time.from;
     to = time.to;
-    console.log(from, to);
     
+    console.log(from, to);
+    var interval = setInterval(function () {
+    turnLightsOn(from, to);
+    console.log(date)   
+    }, 15000);
+    
+});
+
+
+function turnLightsOn(from, to){
+  
     if (date >= from && date <= to)
         {
             socket.emit("stateChanged", 1);
             {}
         } else {
             socket.emit("stateChanged", 0);
-        }
-});
+        }  
+}
+    
 };
 
