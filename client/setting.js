@@ -12,8 +12,7 @@ var con = mysql.createConnection({
 
     var from,to; 
     var dateTime = require('node-datetime');
-    var dt = dateTime.create();
-    var date = dt.format('H:M');
+
     
 socket.on("time", function(time){
     
@@ -22,6 +21,8 @@ socket.on("time", function(time){
     
     console.log(from, to);
     var interval = setInterval(function () {
+    var dt = dateTime.create();
+    var date = dt.format('H:M');    
     turnLightsOn(from, to);
     console.log(date)   
     }, 15000);
