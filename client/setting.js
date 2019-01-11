@@ -12,7 +12,9 @@ var con = mysql.createConnection({
     
     
 socket.on("time", function(time){
-    
-    console.log(time.from);
+ var from,to; 
+    from = time.from;
+    to = time.to;
+    console.log(from, to);
 });
 };
