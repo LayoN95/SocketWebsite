@@ -14,6 +14,8 @@ var from,to;
 
     
 socket.on("time", function(time){
+    
+    var dt = dateTime.create();
     var date = dt.format('H:M');
     
     console.log(date);
