@@ -21,7 +21,7 @@ socket.on("time", function(time){
     
     console.log(from, to);
     //var sql = ("INSERT INTO `CONTROL` VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
-	var sql = ("UPDATE `CONTROL` SET FROM = 12:00");
+	var sql = ("UPDATE `CONTROL` SET FROM = "+from+"");
     con.query(sql, function(err, result) {
 		if(err) throw err;
     });
