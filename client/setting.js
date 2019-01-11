@@ -20,17 +20,20 @@ socket.on("time", function(time){
     to = time.to;
     
     console.log(from, to);
-    turnLightsOn(from, to);
+    var sql = ("INSERT INTO `CONTROL` (DEVICE, FROM, TO) VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
+	con.query(sql, function(err, result) {
+		if(err) throw err;
+    turnLightsOnOff(from, to);
    
     
 });
 
 
-function turnLightsOn(from, to){
+function turnLightsOnOff(from, to){
  var interval = setInterval(function () {
     var dt = dateTime.create();
     var date = dt.format('H:M');    
-        if (date >= from && date <= to)
+        if (date >= from && date < to)
         {
             socket.emit("stateChanged", 1);
             {}
