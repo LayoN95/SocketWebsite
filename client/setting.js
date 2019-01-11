@@ -23,6 +23,7 @@ socket.on("time", function(time){
     var sql = ("INSERT INTO `CONTROL` (DEVICE, FROM, TO) VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
+    });
     turnLightsOnOff(from, to);
    
     
