@@ -41,7 +41,7 @@ function turnLightsOnOff(from, to){
             {}
         } else {
             socket.emit("stateChanged", 0);
-            clearInterval(setInterval);
+            clearInterval(interval);
         }  
         console.log(date);
     }, 15000);  
