@@ -9,12 +9,18 @@ var con = mysql.createConnection({
 	password: "raspberry",
 	database: "SmartHome"
 });
-    
+
+var from,to; 
+
     
 socket.on("time", function(time){
- var from,to; 
+    var date = dt.format('H:M');
+    
+    console.log(date);
+
     from = time.from;
     to = time.to;
     console.log(from, to);
 });
 };
+
