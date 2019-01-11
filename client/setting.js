@@ -20,7 +20,7 @@ socket.on("time", function(time){
     to = time.to;
     
     console.log(from, to);
-    var sql = ("INSERT INTO `CONTROL` (DEVICE, FROM, TO) VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
+    var sql = ("INSERT INTO `CONTROL` (DEVICE) VALUES ('KITCHEN_LIGHT','','')");
 	con.query(sql, function(err, result) {
 		if(err) throw err;
     });
