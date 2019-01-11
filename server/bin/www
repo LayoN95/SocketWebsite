@@ -79,4 +79,9 @@ io.on("connection", function(socket){
     io.emit("hcsr04distance", value.value);
     });
     
+    socket.on("time", function(time){
+    
+    io.emit("time", {"from": time.from, "to": time.to});
+    });
+    
 });

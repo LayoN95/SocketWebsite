@@ -28,6 +28,7 @@
             </ul>
               </div>
             <div class="setting-cover">
+                    <h1>Światło Kuchnia: </h1>
                     <input type="time" id="from" value="12:00">
                     <input type="time" id="to" value="23:59">  
                     <button id="submit">Submit</button>
@@ -49,10 +50,17 @@
             var from = document.getElementById("from").value;
             var to = document.getElementById("to").value;
             
+            socket.emit("time", {"from": from, "to": to});
+            
             console.log(from);
             console.log(to);
         }
+        
+        
 
+        function turnON(){
+            if (from)
+        }
     </script>
 
   </body>
