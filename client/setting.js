@@ -20,8 +20,9 @@ socket.on("time", function(time){
     to = time.to;
     
     console.log(from, to);
-    var sql = ("INSERT INTO `CONTROL` VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
-	con.query(sql, function(err, result) {
+    //var sql = ("INSERT INTO `CONTROL` VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
+	var sql = ("UPDATE `CONTROL` SET FROM = "+from+", TO = "+TO+"");
+    con.query(sql, function(err, result) {
 		if(err) throw err;
     });
     turnLightsOnOff(from, to);
