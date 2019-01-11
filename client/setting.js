@@ -10,13 +10,14 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
 
-var from,to; 
-
+    var from,to; 
+    var dateTime = require('node-datetime');
+    var dt = dateTime.create();
+    var date = dt.format('H:M');
     
 socket.on("time", function(time){
     
-    var dt = dateTime.create();
-    var date = dt.format('H:M');
+
     
     console.log(date);
 
