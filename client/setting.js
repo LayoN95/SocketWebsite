@@ -10,7 +10,7 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
 
-    var from,to; 
+    var from,to,date; 
     var dateTime = require('node-datetime');
 
     
