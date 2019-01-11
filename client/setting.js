@@ -21,10 +21,10 @@ socket.on("time", function(time){
     
     console.log(from, to);
     //var sql = ("INSERT INTO `CONTROL` VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
-	var sql = ("UPDATE `CONTROL` SET FROM = "+from+"");
-    con.query(sql, function(err, result) {
-		if(err) throw err;
-    });
+	//var sql = ("UPDATE `CONTROL` SET FROM = "+from+"");
+    //con.query(sql, function(err, result) {
+	//	if(err) throw err;
+    //});
     turnLightsOnOff(from, to);
    
     
@@ -41,6 +41,7 @@ function turnLightsOnOff(from, to){
             {}
         } else {
             socket.emit("stateChanged", 0);
+            clearInterval(setInterval);
         }  
         console.log(date);
     }, 15000);  
