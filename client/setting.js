@@ -14,4 +14,5 @@ var con = mysql.createConnection({
 socket.on("time", function(time){
     
     console.log(time.from);
-})
+});
+};

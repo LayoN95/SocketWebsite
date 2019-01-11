@@ -18,6 +18,7 @@ var ledPlugin = require('./../../client/app.js');
 var intruderDetecter = require('./../../client/intruderDetecter.js');
 var hcsr04 = require('./../../client/hc-sr04.js');
 var database = require('./../../client/fromDB.js');
+var setting = require('./../../client/setting.js');
 
 
 dht11Plugin.start();
@@ -26,6 +27,7 @@ ledPlugin.start();
 intruderDetecter.start();
 hcsr04.start();
 database.start();
+setting.start();
 
 
 io.on("connection", function(socket){
