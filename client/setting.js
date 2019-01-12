@@ -41,10 +41,10 @@ function turnLightsOnOff(from, to){
             
         } else {
             socket.emit("stateChanged", 0);
-            if (date >= to) {
+            /*if (date >= to) {
                 clearInterval(interval);   
                 console.log("zakonczenie petli");
-            }
+            }*/
             
         }
         console.log(date);
