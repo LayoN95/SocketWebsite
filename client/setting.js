@@ -30,8 +30,6 @@ socket.on("time", function(time){
 
 });
 
-turnLightsOnOff(from, to); //test
-
 
 function turnLightsOnOff(from, to){
  var interval = setInterval(function () {
