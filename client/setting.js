@@ -38,7 +38,7 @@ function turnLightsOnOff(from, to){
         if (date >= from && date < to)
         {
             socket.emit("stateChanged", 1);
-            {}
+            
         } else {
             socket.emit("stateChanged", 0);
             if (date >= to) {
