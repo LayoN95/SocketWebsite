@@ -10,15 +10,15 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
 
-    var from,to,date; 
+    var from,to,date;
     var dateTime = require('node-datetime');
 
-    
+
 socket.on("time", function(time){
-    
+
     from = time.from;
     to = time.to;
-    
+
     console.log(from, to);
     //var sql = ("INSERT INTO `CONTROL` VALUES ('KITCHEN_LIGHT',"+from+","+to+")");
 	//var sql = ("UPDATE `CONTROL` SET FROM = "+from+"");
@@ -26,27 +26,31 @@ socket.on("time", function(time){
 	//	if(err) throw err;
     //});
     turnLightsOnOff(from, to);
-   
-    
+
+
 });
+
+turnLightsOnOff(from, to); //test
 
 
 function turnLightsOnOff(from, to){
  var interval = setInterval(function () {
     var dt = dateTime.create();
-    var date = dt.format('H:M');    
+    var date = dt.format('H:M');
         if (date >= from && date < to)
         {
             socket.emit("stateChanged", 1);
             {}
         } else {
             socket.emit("stateChanged", 0);
-            clearInterval(interval);
-        }  
+            if (date >= to) {
+                clearInterval(interval);    
+            }
+            
+        }
         console.log(date);
-    }, 15000);  
+    }, 15000);
 
 }
-    
-};
 
+};
