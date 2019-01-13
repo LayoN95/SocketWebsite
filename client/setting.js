@@ -10,26 +10,24 @@ var con = mysql.createConnection({
 	database: "SmartHome"
 });
 
-    var from,to,date;
+    var kitchen_from,kitchen_to,outdoor_from,outdoor_to,floor_from,floor_to,date;
     var dateTime = require('node-datetime');
 
 
 socket.on("time", function(time){
 
-    from = time.from;
-    to = time.to;
-
-    console.log(from, to);
+    kitchen_from = time.kitchen_from;
+    kitchen_to = time.kitchen_to;
 	
 	//INSERT DO BAZY
     //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
 	
     //UPDATE WARTOŚCI W BAZIE DANYCH 
-	var sql = ("UPDATE `CONTROL` SET `FROM` = '"+from+"', `TO` = '"+to+"' WHERE `DEVICE`='KITCHEN_LIGHT'");
+	var sql = ("UPDATE `CONTROL` SET `FROM` = '"+kitchen_from+"', `TO` = '"+kitchen_to+"' WHERE `DEVICE`='KITCHEN_LIGHT'");
     con.query(sql, function(err, result) {
 		if(err) throw err;
     });
-    turnLightsOnOff(from, to);
+    turnLightsOnOff(kitchen_from, kitchen_to);
 
 
 });
