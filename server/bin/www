@@ -83,7 +83,7 @@ io.on("connection", function(socket){
     
     socket.on("time", function(time){
     console.log(time.kitchen_from);
-    io.emit("time", {"from": time.kitchen_from, "to": time.kitchen_to});
+    io.emit("time", {"kitchen_from": time.kitchen_from, "kitchen_to": time.kitchen_to});
     });
 	
 	socket.on("getTime", function(){
