@@ -23,7 +23,7 @@ socket.on("time", function(time){
     //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
 	
 
-	var sql = ("UPDATE `CONTROL` SET FROM = '"+from+"', TO = '"+to+"', WHERE DEVICE LIKE 'KITCHEN_LIGHT'");
+	var sql = ("UPDATE `CONTROL` SET FROM = '"+from+"', TO = '"+to+"', WHERE DEVICE='KITCHEN_LIGHT'");
     con.query(sql, function(err, result) {
 		if(err) throw err;
     });
