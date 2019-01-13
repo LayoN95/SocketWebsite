@@ -85,5 +85,9 @@ io.on("connection", function(socket){
     console.log(time.from);
     io.emit("time", {"from": time.from, "to": time.to});
     });
+	
+	socket.on("getTime", function(){
+	io.emit("getTime");
+	});
     
 });
