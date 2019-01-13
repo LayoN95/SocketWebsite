@@ -20,10 +20,12 @@ socket.on("time", function(time){
     to = time.to;
 
     console.log(from, to);
+	
+	//INSERT DO BAZY
     //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
 	
-
-	var sql = ("UPDATE `CONTROL` SET `FROM` = '"+from+"', `TO` = '"+to+"' WHERE `DEVICE`='KITCHEN'");
+    //UPDATE WARTOŚCI W BAZIE DANYCH 
+	var sql = ("UPDATE `CONTROL` SET `FROM` = '"+from+"', `TO` = '"+to+"' WHERE `DEVICE`='KITCHEN_LIGHT'");
     con.query(sql, function(err, result) {
 		if(err) throw err;
     });
