@@ -40,7 +40,7 @@
 						<td>Światło Kuchnia</td>
 						<td><input type="time" id="from" value="12:00"></td>
 						<td><input type="time" id="to" value="23:59"> </td>
-						<td><input type="checkbox" id="active" checked></td>	
+						<td><input type="checkbox" id="active"></td>	
 						</tr>
 				
 					</table>
@@ -76,10 +76,15 @@
 			console.log("getData");
 			socket.emit("getTime");
 		}
-		
+
+//Wyswietlenie danych pobranych z bazy w formularzach
 		socket.on("dbResult", function(value){
 			console.log(value[0].DEVICE);
 			$("#from").val(value[0].FROM);
+			$("#to").val(value[0].TO);
+			$("#active").val(value[0].ACTIVE);
+
+
 		});
         
         
