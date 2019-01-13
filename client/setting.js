@@ -20,10 +20,10 @@ socket.on("time", function(time){
     to = time.to;
 
     console.log(from, to);
-    var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
+    //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
 	
 
-	//var sql = ("UPDATE `CONTROL` SET FROM = "+from+"");
+	var sql = ("UPDATE `CONTROL` SET FROM = '"+from+"', TO = '"+to+"', WHERE DEVICE LIKE 'KITCHEN_LIGHT'");
     con.query(sql, function(err, result) {
 		if(err) throw err;
     });
