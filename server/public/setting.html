@@ -76,6 +76,10 @@
 			console.log("getData");
 			socket.emit("getTime");
 		}
+		
+		socket.on("dbResult", function(value){
+			console.log(value[0].DEVICE);
+		});
         
         
 
