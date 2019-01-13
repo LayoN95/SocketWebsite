@@ -34,7 +34,7 @@ socket.on("getTime", function(){
 	con.query(CONTROL, function(err, result) {
 		if(err) throw err;
         socket.emit("dbResult", result);
-		console.log(result);
+		console.log(result[0].DEVICE);
 });
 });
 };
