@@ -79,7 +79,7 @@
 		
 		socket.on("dbResult", function(value){
 			console.log(value[0].DEVICE);
-			$("input:from").val(value[0].FROM);
+			$("#from").val(value[0].FROM);
 		});
         
         
