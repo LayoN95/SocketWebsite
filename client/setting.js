@@ -19,6 +19,8 @@ socket.on("time", function(time){
     kitchen_from = time.kitchen_from;
     kitchen_to = time.kitchen_to;
 	
+	console.log(kitchen_from, kitchen_to);
+	
 	//INSERT DO BAZY
     //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
 	

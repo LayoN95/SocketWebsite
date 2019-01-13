@@ -82,8 +82,8 @@ io.on("connection", function(socket){
     });
     
     socket.on("time", function(time){
-    console.log(time.from);
-    io.emit("time", {"from": time.from, "to": time.to});
+    console.log(time.kitchen_from);
+    io.emit("time", {"from": time.kitchen_from, "to": time.kitchen_to});
     });
 	
 	socket.on("getTime", function(){
