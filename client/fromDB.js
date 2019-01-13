@@ -30,11 +30,14 @@ socket.on("dbRead", function(){
 
 //POBRANIE DANYCH Z TABELI CONTROL NA POTRZEBY STEROWANIA URZĄDZENIAMI
 socket.on("getTime", function(){
-	var CONTROL = ("SELECT `DEVICE`, `FROM`, `TO` FROM `CONTROL`");
+	var CONTROL = ("SELECT `DEVICE`, `FROM`, `TO`, `ACTIVE` FROM `CONTROL`");
 	con.query(CONTROL, function(err, result) {
 		if(err) throw err;
         socket.emit("dbResult", result);
 		console.log(result[0].DEVICE);
+		console.log(result[0].FROM);
+		console.log(result[0].TO);
+		console.log(result[0].ACTIVE);
 });
 });
 };
