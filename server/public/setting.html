@@ -13,7 +13,7 @@
 
   </head>
 
-  <body>
+  <body onload="getData()">
 
     <div class="site-wrapper">
             <h1 class="cover-heading" style="font-size: 60px;">Smart Home</h1>
@@ -47,7 +47,7 @@
                     
                     
 				    
-                    <button id="submit">Submit</button>
+                    <button id="submit">Zatwierdź</button>
         </div>
 
     </div>
@@ -71,6 +71,10 @@
             console.log(from);
             console.log(to);
         }
+		
+		function getData(){
+			socket.emit("getTime");
+		}
         
         
 
