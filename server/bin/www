@@ -21,11 +21,11 @@ var database = require('./../../client/fromDB.js');
 var setting = require('./../../client/setting.js');
 
 
-//dht11Plugin.start();
-//ds18b20Plugin.start();
+dht11Plugin.start();
+ds18b20Plugin.start();
 ledPlugin.start();
-//intruderDetecter.start();
-//hcsr04.start();
+intruderDetecter.start();
+hcsr04.start();
 database.start();
 setting.start();
 
