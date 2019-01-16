@@ -155,4 +155,23 @@ li a:hover {
 
 }
 
+.temp {
+    position: relative;
+    float: right;
+    width: 100px;
+    margin-right: 0px;
+    margin-top: -210px;
+}
+
+.window{
+    position: relative;
+    width: 100px;
+    float:right;
+    margin-top: -300px;
+    margin-right: -180px;
+
+
+
+}
+
 .kitchenswitch {}

@@ -57,6 +57,16 @@
                     <p>Klimatyzacja</p>
                 </div>
 
+                <div class="temp">
+
+                    <img src="images/temperature.png" style="vertical-align: middle; widht: 50px; height: 50px;" />
+                    <a>Temperatura</a>
+                    <p id="dht11temp">0</p>
+                </div>
+                <div class="window">
+                    <img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;" /> <br>
+                    <a>Okno</a>
+                </div>
             </div>
         </div>
     </div>
@@ -80,6 +90,17 @@
                 $("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
 
             }
+        });
+
+        socket.on("dbResult", function(value) {
+            document.getElementById("dht11humid").innerHTML = value[0].humidity;
+            document.getElementById("dht11temp").innerHTML = value[0].temperature;
+        });
+
+        //Czujnik DHT-11
+        socket.on("dht11Sensor", function(data) {
+            $("#dht11temp").text(data.temp);
+            $("#dht11humid").text(data.humid);
         });
 
 
