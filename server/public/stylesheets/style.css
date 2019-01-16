@@ -96,8 +96,8 @@ li a:hover {
     width: 100px;
     height: 30px;
     float: left;
-    margin-top: 470px;
-    margin-left: 240px;
+    margin-top: 490px;
+    margin-left: -160px;
 }
 .bedroom1 {
     float: left;
@@ -114,12 +114,21 @@ li a:hover {
     margin-right: 100px;
 }
 
-.kitchen {
+.kitchen_kettle {
     width: 200px;
     height: 50px;
     float: left;
-    margin-top: 270px;
-    margin-left: -100px;
+    margin-top: 210px;
+    margin-left: 200px;
+
+}
+
+.kitchen_light {
+    width: 200px;
+    height: 50px;
+    float: left;
+    margin-top: 290px;
+    margin-left: -170px;
 
  
 }

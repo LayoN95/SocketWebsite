@@ -32,8 +32,18 @@
         </div>
         <div class="content-wrapper">
             <div class="visualization">
+                <div class="kitchen_kettle">
+                    <img src="images/kettleoff.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+                    <a>Czajnik</a>
+                </div>
+
+                <div class="kitchen_light">
+                    <p id="kitchen"><img src="images/lightbulboff.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;" /></p>
+                    <a id="kitchenlight" onclick="klight()">Światło kuchnia</a>
+                </div>
                 <div class="bathroom">
-                    <img src="images/motion-sensor-off.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+                    <p><img src="images/motion-sensor-off.png" style="vertical-align: middle; width: 50px; height: 50px;" /></p>
+
                     <p id="motion-sensor">123</p>
                 </div>
 
@@ -80,14 +90,34 @@
         });
 
         //Czujnik PIR
-		socket.on("intruderValue", function(value) {
-			console.log(value);
-			if (value == 1) {
-				$("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+        socket.on("intruderValue", function(value) {
+            console.log(value);
+            if (value == 1) {
+                $("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+            } else {
+                $("#alert").html('<img src="images/alertoff.png"  style="vertical-align: middle; width: 50px; height: 50px;"/>');
+            }
+        });
+
+        		//Światło w kuchni
+		function klight() {
+			console.log("CLICK!" + state);
+			if (state == 1) {
+				socket.emit("stateChanged", 0);
+				$("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+				console.log(state);
+				state = 0;
+
 			} else {
-				$("#alert").html('<img src="images/alertoff.png"  style="vertical-align: middle; width: 50px; height: 50px;"/>');
+				socket.emit("stateChanged", 1);
+				$("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+
+				console.log(state);
+				state = 1;
 			}
-		});
+
+
+		};
 
     </script>
 </BODY>
