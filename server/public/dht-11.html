@@ -93,7 +93,7 @@
         });
 
         socket.on("dbResult", function(value) {
-            document.getElementById("dht11humid").innerHTML = value[0].humidity;
+
             document.getElementById("dht11temp").innerHTML = value[0].temperature;
         });
 
