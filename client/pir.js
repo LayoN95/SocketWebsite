@@ -13,21 +13,21 @@ exports.start function () {
     
 }*/
 
- var mysql = require('mysql');
-        var con = mysql.createConnection({
-	       host: "localhost",
-	       user: "root",
-	       password: "Cinek123",
-	       database: "SmartHome"
-        });
+var mysql = require('mysql');
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Cinek123",
+    database: "SmartHome"
+});
 
-        con.connect(function(err) {
-	       if (err) throw err;
-	       console.log("Connected!")
-        });
+con.connect(function (err) {
+    if (err) throw err;
+    console.log("Connected!")
+});
 
-        var sql = ("SELECT temperature FROM `DHT11`");
-	    con.query(sql, function(err, result) {
-		  if(err) throw err;
-		  console.log(result);
-        });
+var sql = ("SELECT temperature FROM `DHT11`");
+con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+});

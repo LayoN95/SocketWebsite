@@ -10,9 +10,9 @@ config.led = 6;
 // the machine running the server code.
 config.server_url = "";
 
-if(config.led == -1){
-  console.log("Before running app.js you must configure the LED pin number and server url in ./config.js");
-  process.exit(-1);
+if (config.led == -1) {
+    console.log("Before running app.js you must configure the LED pin number and server url in ./config.js");
+    process.exit(-1);
 }
 
 module.exports = config;
