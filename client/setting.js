@@ -30,7 +30,7 @@ exports.start = function () {
 			if (err) throw err;
 		});
 
-		var Outdoor = ("UPDATE `CONTROL` SET `FROM` = '" + outdor_from + "', `TO` = '" + outdoor_to + "' WHERE `DEVICE`='OUTDOOR_LIGHT'");
+		var Outdoor = ("UPDATE `CONTROL` SET `FROM` = '" + outdoor_from + "', `TO` = '" + outdoor_to + "' WHERE `DEVICE`='OUTDOOR_LIGHT'");
 		con.query(Outdoor, function (err, result) {
 			if (err) throw err;
 		});
