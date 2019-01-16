@@ -104,13 +104,9 @@
         });
 
 
-        socket.emit("readDB");
+        //socket.emit("readDB");
 
-        //Wyswietlenie danych z czujnika DHT11
-        socket.on("dht11Sensor", function(data) {
-            $("#bathroom").text(data.temp);
-            console.log("bathroom");
-        });
+
 
         //Wyswietlenie temperatury pobranej z czujnikow DS18B20
         socket.on("updateTemp", function(data) {
@@ -119,11 +115,6 @@
 
         });
 
-        //Wyswietlenie danych z czujnika DHT11
-        socket.on("dht11Sensor", function(data) {
-            $("#livingroom").text(data.temp);
-            $("#kitchen").text(data.humid + "%");
-        });
 
         //HC-SR04 SENSOR
         socket.on("hcsr04distance", function(value) {
