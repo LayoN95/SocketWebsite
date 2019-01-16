@@ -1,167 +1,193 @@
 <HTML>
+
 <HEAD>
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet">
-            <title>Sterowanie</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link href="stylesheets/style.css" rel="stylesheet">
+	<title>Sterowanie</title>
 
 </HEAD>
+
 <BODY onload="getData()">
 
-        <div class="site-wrapper">
-            <h1 class="cover-heading" style="font-size: 60px;">Sterowanie</h1>
+	<div class="site-wrapper">
+		<h1 class="cover-heading" style="font-size: 60px;">Sterowanie</h1>
 
-            <div class="menu">
-            <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="dht-11.html">Wizualizacja</a></li>
-            <li><a href="control.html">Sterowanie</a></li>
-            <li><a href="chart.html">Wykresy</a></li>
-            <li><a href="setting.html">Ustawienia</a></li>
-
-
-            </ul>
-              </div>
-				<div class="control-wrapper" style="margin: 150px;">
-				    <table style="margin: 0;">
-				        <tr><td>
-		                  <div style="border-style: solid; width: 200px; height: 75px;" >
-				            <p id="kitchen"><img src="images/lightbulboff.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;"/></p>
-								<a id="kitchenlight" onclick="klight()">Światło kuchnia</a>
-				          </div>
-                            </td>
-                            <td>
-                                <div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/humidity.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Wilgotność</a>
-                                    <p id="dht11humid">0</p>
-								</div></td>
-                            <td>
-                                <div style="border-style: solid; width: 200px; height: 75px;" >
-								    <p id="alert"><img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/></p>
-								    <a>Alarm(czujka)</a>
-								</div></td></tr>
-										<tr><td>
-				                <div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/temperature.png" style="vertical-align: middle; widht: 50px; height: 50px;"/>
-								    <a>Temperatura</a>
-                                    <p id="dht11temp">0</p>
-								</div></td><td>
-                                <div style="border-style: solid; width: 200px; height: 75px;" >
-									<img src="images/kettleoff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-									<a>Czajnik</a>
-                                </div></td><td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Okno</a>
-							</div></td></tr>
-                            <tr>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/motion-sensor-off.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Sensor ruchu</a>
-                                    <p id="motion-sensor">0</p>
-							</div></td>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Oświetlenie zewnętrzne</a>
-							</div></td>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Oświetlenie podłogowe</a>
-							</div></td>
-                            </tr>
-                            <tr>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/air-conditioner-on.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Klimatyzacja</a>
-							</div></td>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Oświetlenie zewnętrzne</a>
-							</div></td>
-                                <td><div style="border-style: solid; width: 200px; height: 75px;" >
-								    <img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;"/>
-								    <a>Oświetlenie podłogowe</a>
-							</div></td>
-                            </tr>
-							</table>
-                    <h1 id="dbRecord"></h1>
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Strona Główna</a></li>
+				<li><a href="dht-11.html">Wizualizacja</a></li>
+				<li><a href="control.html">Sterowanie</a></li>
+				<li><a href="chart.html">Wykresy</a></li>
+				<li><a href="setting.html">Ustawienia</a></li>
 
 
+			</ul>
+		</div>
+		<div class="control-wrapper" style="margin: 150px;">
+			<table style="margin: 0;">
+				<tr>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<p id="kitchen"><img src="images/lightbulboff.png" style="margin-top: 7.5px; vertical-align: middle; widht: 50px; height: 50px;" /></p>
+							<a id="kitchenlight" onclick="klight()">Światło kuchnia</a>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/humidity.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Wilgotność</a>
+							<p id="dht11humid">0</p>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<p id="alert"><img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;" /></p>
+							<a>Alarm(czujka)</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/temperature.png" style="vertical-align: middle; widht: 50px; height: 50px;" />
+							<a>Temperatura</a>
+							<p id="dht11temp">0</p>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/kettleoff.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Czajnik</a>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Okno</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/motion-sensor-off.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Sensor ruchu</a>
+							<p id="motion-sensor">0</p>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Oświetlenie zewnętrzne</a>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Oświetlenie podłogowe</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/air-conditioner-on.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Klimatyzacja</a>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Oświetlenie zewnętrzne</a>
+						</div>
+					</td>
+					<td>
+						<div style="border-style: solid; width: 200px; height: 75px;">
+							<img src="images/windowclosed.png" style="vertical-align: middle; width: 50px; height: 50px;" />
+							<a>Oświetlenie podłogowe</a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<h1 id="dbRecord"></h1>
 
 
 
-            </div>
-
-        </div>
 
 
-            <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="/socket.io/socket.io.js"></script>
+		</div>
 
-            <script type="text/javascript">
-            
-            var socket = io.connect('/');
-            var state = 0;
-//Pozyskanie danych
-            function getData(){
-                socket.emit("dbRead");
-            }
-            socket.on("dbResult", function(value){
-                document.getElementById("dht11humid").innerHTML = value[0].humidity;
-                document.getElementById("dht11temp").innerHTML = value[0].temperature;                
-            });
-            
-            socket.on("lightResult", function(value){
-               if (value[0].KITCHEN_LIGHT == true) {
-                    state = 1;
-                    $("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
-               } else {
-                    $("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
+	</div>
 
-               }
-            });
-//Czujnik ruchu HCSR-04
-            socket.on("hcsr04distance", function(value){
-                //console.log("hcsr04distance: " + value);
-                $("#motion-sensor").text(value);
-                });
-//Czujnik DHT-11
-            socket.on("dht11Sensor", function(data){
-	           $("#dht11temp").text(data.temp);
-	           $("#dht11humid").text(data.humid);
-	           });	
-        
-//Czujnik PIR
-            socket.on("intruderValue", function(value){
-            console.log(value);
-                if(value==1) {
-                    $("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');    
-                } else {
-                $("#alert").html('<img src="images/alertoff.png"  style="vertical-align: middle; width: 50px; height: 50px;"/>');   
-                    }
-            });
-//Światło w kuchni
-            function klight(){  
-                console.log("CLICK!" + state);
-                if (state == 1) {
-                  socket.emit("stateChanged", 0); 
-                    $("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
-                    console.log(state);
-                    state = 0;
 
-                } else {
-                    socket.emit("stateChanged", 1);
-                    $("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>'); 
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 
-                    console.log(state);
-                    state = 1;
-                }
-                    
-                  
-            };    
-                
-            </script>
+	<script type="text/javascript">
+		var socket = io.connect('/');
+		var state = 0;
+		//Pozyskanie danych
+		function getData() {
+			socket.emit("dbRead");
+		}
+		socket.on("dbResult", function(value) {
+			document.getElementById("dht11humid").innerHTML = value[0].humidity;
+			document.getElementById("dht11temp").innerHTML = value[0].temperature;
+		});
+
+		socket.on("lightResult", function(value) {
+			if (value[0].KITCHEN_LIGHT == true) {
+				state = 1;
+				$("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+			} else {
+				$("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+
+			}
+		});
+		//Czujnik ruchu HCSR-04
+		socket.on("hcsr04distance", function(value) {
+			//console.log("hcsr04distance: " + value);
+			$("#motion-sensor").text(value);
+		});
+		//Czujnik DHT-11
+		socket.on("dht11Sensor", function(data) {
+			$("#dht11temp").text(data.temp);
+			$("#dht11humid").text(data.humid);
+		});
+
+		//Czujnik PIR
+		socket.on("intruderValue", function(value) {
+			console.log(value);
+			if (value == 1) {
+				$("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+			} else {
+				$("#alert").html('<img src="images/alertoff.png"  style="vertical-align: middle; width: 50px; height: 50px;"/>');
+			}
+		});
+		//Światło w kuchni
+		function klight() {
+			console.log("CLICK!" + state);
+			if (state == 1) {
+				socket.emit("stateChanged", 0);
+				$("#kitchen").html('<img src="images/lightbulboff.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+				console.log(state);
+				state = 0;
+
+			} else {
+				socket.emit("stateChanged", 1);
+				$("#kitchen").html('<img src="images/lightbulb.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+
+				console.log(state);
+				state = 1;
+			}
+
+
+		};
+
+	</script>
 
 </BODY>
+
 </HTML>

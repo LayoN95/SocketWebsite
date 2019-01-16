@@ -29,7 +29,7 @@ socket.on("connect", function(){
     //console.log("The new state is: " + state);
    if(state == true){
    Kitchen_LED.writeSync(1);
-        var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT = true");
+        var sql = ("UPDATE `LIGHTING` SET KITCHEN_LIGHT= true");
 	    con.query(sql, function(err, result) {
 		if(err) throw err;
         });

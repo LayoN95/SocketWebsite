@@ -1,113 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Strona Główna</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet">
+	<title>Strona Główna</title>
 
-  </head>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link href="stylesheets/stylee.css" rel="stylesheet">
 
-  <body onload="getData()">
+</head>
 
-    <div class="site-wrapper">
-            <h1 class="cover-heading" style="font-size: 60px;">Smart Home</h1>
-              
- 		<div class="menu">
-            <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="dht-11.html">Wizualizacja</a></li>
-            <li><a href="control.html">Sterowanie</a></li>
-            <li><a href="chart.html">Wykresy</a></li>
-            <li><a href="setting.html">Ustawienia</a></li>
-            </ul>
-              </div>
-            <div class="setting-cover">
-                    <h1>Światło Kuchnia: </h1>
-					<table border="1" align="center">
-						<tr><td><h1>Urządzenie:</h1></td>
-						<td><h1>Od godziny:</h1></td>
-						<td><h1>Do godziny:</h1></td>
-						<td><h1>Aktywne:</h1></td>
-						</tr>
-						
-						<tr>
-						<td>Oświetlenie kuchenne</td>
-						<td><input type="time" id="kitchen_from"></td>
-						<td><input type="time" id="kitchen_to"> </td>
-						<td><input type="checkbox" id="kitchen_active"></td>	
-						</tr>
-						
-						<tr>
-						<td>Oświetlenie zewnętrzne</td>
-						<td><input type="time" id="outdoor_from" value="12:00"></td>
-						<td><input type="time" id="outdoor_to" value="23:59"> </td>
-						<td><input type="checkbox" id="outdoor_active"></td>	
-						</tr>
-						
-						<tr>
-						<td>Oświetlenie podłogowe</td>
-						<td><input type="time" id="floor_from" value="12:00"></td>
-						<td><input type="time" id="floor_to" value="23:59"> </td>
-						<td><input type="checkbox" id="floor_active"></td>	
-						</tr>
-					</table>
-                    
-                    
-				    
-                    <button id="submit">Zatwierdź</button>
-        </div>
+<body onload="getData()">
 
-    </div>
+	<div class="site-wrapper">
+		<h1 class="cover-heading" style="font-size: 60px;">Smart Home</h1>
+
+		<div class="menu">
+			<ul>
+				<li><a href="index.html">Strona Główna</a></li>
+				<li><a href="dht-11.html">Wizualizacja</a></li>
+				<li><a href="control.html">Sterowanie</a></li>
+				<li><a href="chart.html">Wykresy</a></li>
+				<li><a href="setting.html">Ustawienia</a></li>
+			</ul>
+		</div>
+		<div class="setting-cover">
+			<h1>Światło Kuchnia: </h1>
+			<table border="1" align="center">
+				<tr>
+					<td>
+						<h1>Urządzenie:</h1>
+					</td>
+					<td>
+						<h1>Od godziny:</h1>
+					</td>
+					<td>
+						<h1>Do godziny:</h1>
+					</td>
+					<td>
+						<h1>Aktywne:</h1>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Oświetlenie kuchenne</td>
+					<td><input type="time" id="kitchen_from"></td>
+					<td><input type="time" id="kitchen_to"> </td>
+					<td><input type="checkbox" id="kitchen_active"></td>
+				</tr>
+
+				<tr>
+					<td>Oświetlenie zewnętrzne</td>
+					<td><input type="time" id="outdoor_from" value="12:00"></td>
+					<td><input type="time" id="outdoor_to" value="23:59"> </td>
+					<td><input type="checkbox" id="outdoor_active"></td>
+				</tr>
+
+				<tr>
+					<td>Oświetlenie podłogowe</td>
+					<td><input type="time" id="floor_from" value="12:00"></td>
+					<td><input type="time" id="floor_to" value="23:59"> </td>
+					<td><input type="checkbox" id="floor_active"></td>
+				</tr>
+			</table>
 
 
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-    <script src="/socket.io/socket.io.js"></script>
+			<button id="submit">Zatwierdź</button>
+		</div>
 
-    <script type="text/javascript">
-    var socket = io.connect('/'); 
-    
-    var submit = document.getElementById("submit");
-        submit.onclick = function(){
-            //Oświetlenie kuchnia
+	</div>
+
+
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+	<script src="/socket.io/socket.io.js"></script>
+
+	<script type="text/javascript">
+		var socket = io.connect('/');
+
+		var submit = document.getElementById("submit");
+		submit.onclick = function() {
+			//Oświetlenie kuchnia
 			var kitchen_from = document.getElementById("kitchen_from").value;
-            var kitchen_to = document.getElementById("kitchen_to").value;
+			var kitchen_to = document.getElementById("kitchen_to").value;
 			//Oświetlenie na zewnątrz
 			var outdoor_from = document.getElementById("outdoor_from").value;
-            var outdoor_to = document.getElementById("outdoor_to").value;
+			var outdoor_to = document.getElementById("outdoor_to").value;
 			//Oświetlenie podłogowe
 			var floor_from = document.getElementById("floor_from").value;
-            var floor_to = document.getElementById("floor_to").value;
-            
-            socket.emit("time", {"kitchen_from": kitchen_from, "kitchen_to": kitchen_to, "outdoor_from": outdoor_from, "outdoor_to": outdoor_to, "floor_from": floor_from, "floor_to": floor_to});
-            
-        }
-		
-		function getData(){
+			var floor_to = document.getElementById("floor_to").value;
+
+			socket.emit("time", {
+				"kitchen_from": kitchen_from,
+				"kitchen_to": kitchen_to,
+				"outdoor_from": outdoor_from,
+				"outdoor_to": outdoor_to,
+				"floor_from": floor_from,
+				"floor_to": floor_to
+			});
+
+		}
+
+		function getData() {
 			console.log("getData");
 			socket.emit("getTime");
 		}
 
-//Wyswietlenie danych pobranych z bazy w formularzach
-		socket.on("dbResult", function(value){
+		//Wyswietlenie danych pobranych z bazy w formularzach
+		socket.on("dbResult", function(value) {
 			console.log(value[0].DEVICE);
+
+			//Aktualizacja formularza Oświetlenie kuchenne
 			$("#kitchen_from").val(value[0].FROM);
 			$("#kitchen_to").val(value[0].TO);
 			$("#kitchen_active").val(value[0].ACTIVE);
 
+			//Aktualizacja formularza Oświetlenie zewnętrzne
+			$("#outdoor_from").val(value[1].FROM);
+			$("#outdoor_to").val(value[1].TO);
+			$("#outdoor_active").val(value[1].ACTIVE);
 
+			//Aktualizacja formularza Oświetlenie podłogowe
+			$("#floor_from").val(value[2].FROM);
+			$("#floor_to").val(value[2].TO);
+			$("#floor_active").val(value[2].ACTIVE);
 		});
-        
-        
 
-    </script>
+	</script>
 
-  </body>
+</body>
+
 </html>

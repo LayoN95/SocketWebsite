@@ -14,8 +14,6 @@
             <a href="dht-11.html">Wizualizacja</a>
             <a href="dht-11.html">Sensor DHT-11</a>
             <a href="control.html">Sterowanie</a>
-            <li><a href="setting.html">Ustawienia</a></li>
-
               </div>
  
     <div class="container" style="height: 400px; width: 600px;">
