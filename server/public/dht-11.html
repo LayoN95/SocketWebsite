@@ -1,102 +1,134 @@
 <HTML>
+
 <HEAD>
-     <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
- <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-	<link href="stylesheets/style.css" rel="stylesheet">
-        <title>Wizualizacja</title>
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <title>Wizualizacja</title>
 
 </HEAD>
+
 <BODY>
-        
+
     <div class="site-wrapper">
-    
-        <h1 class="cover-heading" style="font-size: 60px;">Wizualizacja</h1>
+        <div class="header-wrapper">
+            <h1 style="font-size: 60px;">Wizualizacja</h1>
+        </div>
         <div class="menu">
             <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="dht-11.html">Wizualizacja</a></li>
-            <li><a href="control.html">Sterowanie</a></li>
-            <li><a href="chart.html">Wykresy</a></li>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="dht-11.html">Wizualizacja</a></li>
+                <li><a href="control.html">Sterowanie</a></li>
+                <li><a href="chart.html">Wykresy</a></li>
 
             </ul>
-              </div>
-    <div class="visualization">
-        <!--<h1 style = "float: left; margin: 180px; margin-top: 180px">123</h1>-->
-        <!--<div class="bathroom">
+        </div>
+        <div class="content-wrapper">
+            <div class="visualization">
+                <!--<h1 style = "float: left; margin: 180px; margin-top: 180px">123</h1>-->
+                <!--<div class="bathroom">
             <table>
                 <tr><td>Garaż</td></tr>
                 <tr><td><h2 id="bathroom" style="color: black;"></h2></td></tr>
             </table>
             
         </div>-->
-        <div class="bedroom1">
-            <table>
-                <tr><td>Sypialnia 1</td></tr>
-                <tr><td><h2 id="28-00000a38e7b7" style="color: black;">Sypialnia 1</h2></td></tr>
-                <tr><td><img src="images/alert.png" style="width: 15%; height: 10%;"></td></tr>
+                <div class="bedroom1">
+                    <table>
+                        <tr>
+                            <td>Sypialnia 1</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2 id="28-00000a38e7b7" style="color: black;">Sypialnia 1</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/alert.png" style="width: 15%; height: 10%;"></td>
+                        </tr>
 
-            </table>
-        </div>
-        <div class="bedroom2">
-            <table>
-            <tr><td>Sypialnia 2</td></tr>
-                <tr><td><h2 id="28-00000a3adcf4" style="color: black;">Sypialnia 2</h2></td></tr>
-                <tr><td><img src="images/alert.png" style="width: 15%; height: 10%;"></td></tr>
-            </table>
-            
-        </div>
-        <div class="kitchen">
-            <table>
-            <tr><td>Kuchnia</td></tr>
-            <!--<tr><td><h2 id="kitchen" style="color: black;">Kuchnia</h2></td></tr>-->
-           <tr><td><img src="images/lightbulb.png" style="width: 15%; height: 5%;"></td></tr>
-         
-            </table>
-        </div>
-        <div class="livingroom">
-            <table>
-            <tr><td>Salon</td></tr>
-            <tr><td><h2 id="livingroom" style="color: black;">Salon</h2></td></tr></table>
-            
-        </div>        
+                    </table>
+                </div>
+                <div class="bedroom2">
+                    <table>
+                        <tr>
+                            <td>Sypialnia 2</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2 id="28-00000a3adcf4" style="color: black;">Sypialnia 2</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/alert.png" style="width: 15%; height: 10%;"></td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div class="kitchen">
+                    <table>
+                        <tr>
+                            <td>Kuchnia</td>
+                        </tr>
+                        <!--<tr><td><h2 id="kitchen" style="color: black;">Kuchnia</h2></td></tr>-->
+                        <tr>
+                            <td><img src="images/lightbulb.png" style="width: 15%; height: 5%;"></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="livingroom">
+                    <table>
+                        <tr>
+                            <td>Salon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h2 id="livingroom" style="color: black;">Salon</h2>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
         </div>
     </div>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    
+
     <script type="text/javascript">
-    var socket = io.connect('/'); 
-    
+        var socket = io.connect('/');
+
         socket.emit("readDB");
 
-//Wyswietlenie danych z czujnika DHT11
-    socket.on("dht11Sensor", function(data){
-	$("#bathroom").text(data.temp);
-        console.log("bathroom");
-	});	    
+        //Wyswietlenie danych z czujnika DHT11
+        socket.on("dht11Sensor", function(data) {
+            $("#bathroom").text(data.temp);
+            console.log("bathroom");
+        });
 
-    //Wyswietlenie temperatury pobranej z czujnikow DS18B20			
-    socket.on("updateTemp", function(data){
-	console.log(data);
-        $("#" + data.id).text(data.value);
-              
-    });
+        //Wyswietlenie temperatury pobranej z czujnikow DS18B20
+        socket.on("updateTemp", function(data) {
+            console.log(data);
+            $("#" + data.id).text(data.value);
 
-//Wyswietlenie danych z czujnika DHT11
-    socket.on("dht11Sensor", function(data){
-	$("#livingroom").text(data.temp);
-	$("#kitchen").text(data.humid + "%");
-	});	    
+        });
 
+        //Wyswietlenie danych z czujnika DHT11
+        socket.on("dht11Sensor", function(data) {
+            $("#livingroom").text(data.temp);
+            $("#kitchen").text(data.humid + "%");
+        });
 
     </script>
 </BODY>
+
 </HTML>

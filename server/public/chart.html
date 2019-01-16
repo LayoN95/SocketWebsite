@@ -1,104 +1,110 @@
 <HTML>
+
 <HEAD>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
     <link href="stylesheets/style.css" rel="stylesheet">
     <title>Historia</title>
 </HEAD>
+
 <BODY>
     <div class="site-wrapper">
-            <h1 class="cover-heading" style="font-size: 60px;">Historia</h1>
+        <div class="header-wrapper">
+            <h1 style="font-size: 60px;">Historia</h1>
+        </div>
 
-    <div class="menu">
+        <div class="menu">
             <ul>
-            <li><a href="index.html">Strona Główna</a></li>
-            <li><a href="dht-11.html">Wizualizacja</a></li>
-            <li><a href="control.html">Sterowanie</a></li>
-            <li><a href="chart.html">Wykresy</a></li>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="dht-11.html">Wizualizacja</a></li>
+                <li><a href="control.html">Sterowanie</a></li>
+                <li><a href="chart.html">Wykresy</a></li>
             </ul>
-              </div>
+        </div>
 
-<div class="container" style="margin-top: 30px;">
-    <div style="margin-left: 50px; float:left; width: 480px; height: 300px;">
-         <canvas id="myChart"></canvas>
-    </div>
-    <div style="margin-right: 50px;float:right; width: 480px; height: 300px;">
-         <canvas id="myChart2"></canvas>
-    </div>
+        <div class="content-wrapper">
+            <div style="margin-left: 50px; float:left; width: 480px; height: 300px;">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div style="margin-right: 50px;float:right; width: 480px; height: 300px;">
+                <canvas id="myChart2"></canvas>
+            </div>
 
-  </div>    </div>
+        </div>
+    </div>
 
 
 
 
     <script src="/socket.io/socket.io.js"></script>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
         let myChart = document.getElementById('myChart').getContext('2d');
         let myChart2 = document.getElementById('myChart2').getContext('2d');
 
 
 
-    // Global Options
-    Chart.defaults.global.defaultFontFamily = 'Lato';
-    Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = 'black';
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = 'black';
 
-    let massPopChart = new Chart(myChart, {
-      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-      data:{
-        labels:['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
-        datasets:[{
-          label:'Temperatura DHT-11',
-          data:[
-            23.8,
-            22.8,
-            21.8,
-            22.8,
-            22.8,
-            23.8
-          ],
-          //backgroundColor:'green',
-          backgroundColor:[
-            'rgba(255, 99, 132, 0.6)'
-          ],
-          borderWidth:1,
-          borderColor:'#777',
-          hoverBorderWidth:3,
-          hoverBorderColor:'#000'
-        }]
-      },
+        let massPopChart = new Chart(myChart, {
+            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
+                datasets: [{
+                    label: 'Temperatura DHT-11',
+                    data: [
+                        23.8,
+                        22.8,
+                        21.8,
+                        22.8,
+                        22.8,
+                        23.8
+                    ],
+                    //backgroundColor:'green',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)'
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            },
 
-    });
+        });
 
-    let massPopChart2 = new Chart(myChart2, {
-      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-      data:{
-        labels:['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
-        datasets:[{
-          label:'Wilgotność DHT-11',
-          data:[
-            23.8,
-            22.8,
-            21.8,
-            22.8,
-            22.8,
-            23.8
-          ],
-          //backgroundColor:'green',
-          backgroundColor:[
-            'rgba(255, 99, 132, 0.6)'
-          ],
-          borderWidth:1,
-          borderColor:'#777',
-          hoverBorderWidth:3,
-          hoverBorderColor:'#000'
-        }]
-      },
+        let massPopChart2 = new Chart(myChart2, {
+            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
+                datasets: [{
+                    label: 'Wilgotność DHT-11',
+                    data: [
+                        23.8,
+                        22.8,
+                        21.8,
+                        22.8,
+                        22.8,
+                        23.8
+                    ],
+                    //backgroundColor:'green',
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)'
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            },
 
-    });
+        });
 
     </script>
 </BODY>
+
 </HTML>

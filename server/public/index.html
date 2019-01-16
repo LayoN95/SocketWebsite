@@ -2,140 +2,138 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Strona Główna</title>
+    <title>Strona Główna</title>
 
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
-	<link href="stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<div class="site-wrapper">
-		<h1 class="cover-heading" style="font-size: 60px;">Smart Home</h1>
+    <div class="site-wrapper">
+        <div class="header-wrapper">
 
-		<div class="menu">
-			<ul>
-				<li><a href="index.html">Strona Główna</a></li>
-				<li><a href="dht-11.html">Wizualizacja</a></li>
-				<li><a href="control.html">Sterowanie</a></li>
-				<li><a href="chart.html">Wykresy</a></li>
-				<li><a href="setting.html">Ustawienia</a></li>
-			</ul>
-		</div>
-		<div class="onoffswitch" style="margin:0px auto;">
-			<div class="switch demo3">
-				<input type="checkbox" id="myonoffswitch">
-				<label><i></i></label>
-			</div>
-		</div>
-		<div class="dht11">
-			<table border="2" width="80%" style="margin: 100px; text-align: center;">
-				<tr>
-					<td colspan="2">
-						<h1>Temperatura powietrza:</h1>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<h1>Kuchnia</h1>
-					</td>
-					<td>
-						<h1>Salon</h1>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<h1 id="28-00000a38e7b7"></h1>
-					</td>
-					<td>
-						<h1 id="28-00000a3adcf4"></h1>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<h1>DHT11 Sensor</h1>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<h1>Temperatura:</h1>
-					</td>
-					<td>
-						<h1>Wilgotnosc powietrza:</h1>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<h1 id="dht11temp"></h1>
-					</td>
-					<td>
-						<h1 id="dht11humid"></h1>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p id="alert"><img src="images/alertoff.png"></p>
-					</td>
-					<td>
-						<h1 id="hcsr04">DIST</h1>
-					</td>
-				</tr>
-			</table>
+            <h1 style="font-size: 60px;">Smart Home</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Strona Główna</a></li>
+                <li><a href="dht-11.html">Wizualizacja</a></li>
+                <li><a href="control.html">Sterowanie</a></li>
+                <li><a href="chart.html">Wykresy</a></li>
+                <li><a href="setting.html">Ustawienia</a></li>
+            </ul>
+        </div>
+        <div class="content-wrapper">
 
-		</div>
-	</div>
+            <div class="dht11">
+                <table border="2" width="80%" style="margin: 100px; text-align: center;">
+                    <tr>
+                        <td colspan="2">
+                            <h1>Temperatura powietrza:</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1>Kuchnia</h1>
+                        </td>
+                        <td>
+                            <h1>Salon</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1 id="28-00000a38e7b7"></h1>
+                        </td>
+                        <td>
+                            <h1 id="28-00000a3adcf4"></h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h1>DHT11 Sensor</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1>Temperatura:</h1>
+                        </td>
+                        <td>
+                            <h1>Wilgotnosc powietrza:</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1 id="dht11temp"></h1>
+                        </td>
+                        <td>
+                            <h1 id="dht11humid"></h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p id="alert"><img src="images/alertoff.png"></p>
+                        </td>
+                        <td>
+                            <h1 id="hcsr04">DIST</h1>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
 
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-	<script src="/socket.io/socket.io.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
 
-	<script type="text/javascript">
-		var socket = io.connect('/');
+    <script type="text/javascript">
+        var socket = io.connect('/');
 
-		//Obsluga sterowania portem GPIO
-		$("#myonoffswitch").change(function() {
-			socket.emit("stateChanged", this.checked);
-			//console.log("StateChanged");
-		});
+        //Obsluga sterowania portem GPIO
+        $("#myonoffswitch").change(function() {
+            socket.emit("stateChanged", this.checked);
+            //console.log("StateChanged");
+        });
 
-		//Wyswietlenie temperatury pobranej z czujnikow DS18B20
-		socket.on("updateTemp", function(data) {
-			//console.log(data);
-			$("#" + data.id).text(data.value);
+        //Wyswietlenie temperatury pobranej z czujnikow DS18B20
+        socket.on("updateTemp", function(data) {
+            //console.log(data);
+            $("#" + data.id).text(data.value);
 
-		});
+        });
 
-		//Wyswietlenie danych z czujnika DHT11
-		socket.on("dht11Sensor", function(data) {
-			$("#dht11temp").text(data.temp);
-			$("#dht11humid").text(data.humid);
-		});
+        //Wyswietlenie danych z czujnika DHT11
+        socket.on("dht11Sensor", function(data) {
+            $("#dht11temp").text(data.temp);
+            $("#dht11humid").text(data.humid);
+        });
 
-		//Czujnik PIR
-		socket.on("intruderValue", function(value) {
-			console.log(value);
-			if (value == 1) {
-				$("#alert").html('<img src="images/alert.png">');
-			} else {
-				$("#alert").html('<img src="images/alertoff.png">');
-			}
-		});
+        //Czujnik PIR
+        socket.on("intruderValue", function(value) {
+            console.log(value);
+            if (value == 1) {
+                $("#alert").html('<img src="images/alert.png">');
+            } else {
+                $("#alert").html('<img src="images/alertoff.png">');
+            }
+        });
 
-		//HC-SR04
-		socket.on("hcsr04distance", function(value) {
-			//console.log("hcsr04distance: " + value);
-			$("#hcsr04").text(value);
-		});
-
-	</script>
+        //HC-SR04
+        socket.on("hcsr04distance", function(value) {
+            //console.log("hcsr04distance: " + value);
+            $("#hcsr04").text(value);
+        });
+    </script>
 
 </body>
 
