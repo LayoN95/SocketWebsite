@@ -37,6 +37,10 @@
                     <p id="motion-sensor">123</p>
                 </div>
 
+                <div class="bedroom2">
+                    <p id="alert"><img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;" /></p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -73,6 +77,16 @@
             //console.log("hcsr04distance: " + value);
             $("#motion-sensor").text(value);
         });
+
+        //Czujnik PIR
+		socket.on("intruderValue", function(value) {
+			console.log(value);
+			if (value == 1) {
+				$("#alert").html('<img src="images/alert.png" style="vertical-align: middle; width: 50px; height: 50px;"/>');
+			} else {
+				$("#alert").html('<img src="images/alertoff.png"  style="vertical-align: middle; width: 50px; height: 50px;"/>');
+			}
+		});
 
     </script>
 </BODY>
