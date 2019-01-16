@@ -1,8 +1,7 @@
-
 a,
 a:focus,
 a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 
@@ -14,26 +13,27 @@ a:hover {
 html,
 body {
     margin-top: -10px;
-  background-color: white;
+    background-color: white;
     background-attachment: fixed;
     height: 100%;
 }
+
 body {
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 }
 
 .site-wrapper {
-  margin: auto;
-  background-color: gray;
-  width: 80%;
-  height: 100%;
-  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    margin: auto;
+    background-color: gray;
+    width: 80%;
+    height: 100%;
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 
 }
 
 .content-wrapper {
-     width: 80%;
+    width: 80%;
     height: 100%;
     margin: auto;
     text-align: center;
@@ -84,10 +84,12 @@ li a:hover {
 
 .visualization {
     margin: auto;
-  
+
 
     background: url('../images/makieta.png');
-    background-size: 100%/*900px 691px*/;
+    background-size: 100%
+        /*900px 691px*/
+    ;
     width: 900px;
     height: 691px;
 }
@@ -99,17 +101,19 @@ li a:hover {
     margin-top: 490px;
     margin-left: -160px;
 }
+
 .bedroom1 {
     float: left;
-     width: 200px;
+    width: 200px;
     height: 150px;
     margin-top: 470px;
     margin-left: 250px;
 }
+
 .bedroom2 {
     float: right;
-     width: 200px;
-    height: 150px;  
+    width: 200px;
+    height: 150px;
     margin-top: 490px;
     margin-right: 100px;
 }
@@ -130,19 +134,25 @@ li a:hover {
     margin-top: 290px;
     margin-left: -170px;
 
- 
+
+}
+
+.air {
+    width: 200px;
+    height: 50px;
+    float: left;
+    margin-top: 170px;
+    margin-left: 30
 }
 
 .livingroom {
-   
+
     float: right;
-    
+
     margin-top: 270px;
-    margin-right: -80px;
-    
-    
+    margin-right: -90px;
+
+
 }
 
-.kitchenswitch {
-    
-}
+.kitchenswitch {}
