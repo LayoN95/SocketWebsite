@@ -38,6 +38,7 @@ body {
     background-color: gray;
     margin: auto;
     text-align: center;
+    margin-top: 50px;
 
 }
 
@@ -46,9 +47,6 @@ body {
     background-color: #333;
 }
 
-.visualization > h1 {
-    color: black;
-}
 /*
 Menu
 */
@@ -90,9 +88,8 @@ li a:hover {
   
 
     background: url('../images/makieta.png');
-    background-size: 900px 691px;
-    width: 900px;
-    height: 691px;
+    background-size: 100%/*900px 691px*/;
+    height: 100%;
 }
 
 .bathroom {
