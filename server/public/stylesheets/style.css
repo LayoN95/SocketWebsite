@@ -16,18 +16,15 @@ body {
     background-color: white;
     background-attachment: fixed;
     height: 100%;
-}
-
-body {
     text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
-    box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 }
 
 .site-wrapper {
     margin: auto;
+    min-height: 100%;
+
     background-color: gray;
     width: 80%;
-    height: 100%;
     box-shadow: inset 0 0 100px rgba(0, 0, 0, .5);
 
 }
@@ -39,6 +36,17 @@ body {
     text-align: center;
     margin-top: 50px;
 
+}
+
+.control-wrapper {
+  margin: auto;
+  width: 700px;
+  margin-top: 50px;
+}
+
+.control-table {
+    margin: auto;
+    align-content: center;
 }
 
 .header-wrapper {
@@ -84,7 +92,7 @@ li a:hover {
 
 .visualization {
     margin: auto;
-
+    position: relative;
 
     background: url('../images/makieta.png');
     background-size: 100%
@@ -95,14 +103,16 @@ li a:hover {
 }
 
 .bathroom {
+    position: absolute;
     width: 100px;
     height: 30px;
     float: left;
-    margin-top: 490px;
-    margin-left: -160px;
+    top: 460px;
+    left: 230px;
 }
 
 .bedroom1 {
+    position: absolute;
     float: left;
     width: 200px;
     height: 150px;
@@ -111,44 +121,48 @@ li a:hover {
 }
 
 .bedroom2 {
+    position: absolute;
     float: right;
     width: 200px;
-    height: 150px;
-    margin-top: 490px;
-    margin-right: 100px;
+    height: 100px;
+    top: 490px;
+    right: 130px;
 }
 
 .kitchen_kettle {
-    width: 200px;
+    position: absolute;
     height: 50px;
+    width: 50px;
     float: left;
-    margin-top: 210px;
-    margin-left: 200px;
+    top: 225px;
+    left: 255px;
 
 }
 
 .kitchen_light {
+    position: absolute;
     width: 200px;
     height: 50px;
     float: left;
-    margin-top: 290px;
-    margin-left: -170px;
+    margin-top: 300px;
+    margin-left: 230px;
 
 
 }
 
 .air {
+    position: absolute;
     width: 200px;
     height: 50px;
     float: left;
-    margin-top: 170px;
-    margin-left: 30
+    top: 510px;
+    left: 400px;
 }
 
 .livingroom {
 
     float: right;
-
+    position: absolute;
     margin-top: 270px;
     margin-right: -90px;
 
@@ -156,19 +170,21 @@ li a:hover {
 }
 
 .temp {
+    position: absolute;
     position: relative;
     float: right;
     width: 100px;
-    margin-right: 0px;
-    margin-top: -210px;
+    right: 330px;
+    top: 340px;
 }
 
 .window{
+    position: absolute;
     position: relative;
     width: 100px;
     float:right;
-    margin-top: -300px;
-    margin-right: -180px;
+    top: 260px;
+    right: 20px;
 
 
 
