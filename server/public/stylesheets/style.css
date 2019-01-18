@@ -12,7 +12,7 @@ a:hover {
 
 html,
 body {
-    margin-top: -10px;
+    margin-top: 0px;
     background-color: white;
     background-attachment: fixed;
     height: 100%;
@@ -31,7 +31,6 @@ body {
 
 .content-wrapper {
     width: 80%;
-    height: 100%;
     margin: auto;
     text-align: center;
     margin-top: 50px;
@@ -46,7 +45,7 @@ body {
 
 .control-table {
     margin: auto;
-    align-content: center;
+
 }
 
 .header-wrapper {
