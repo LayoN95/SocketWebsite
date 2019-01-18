@@ -38,13 +38,15 @@ body {
 }
 
 .control-wrapper {
-  margin: auto;
-  width: 700px;
-  margin-top: 50px;
+    margin: auto;
+    width: 700px;
+    margin-top: 50px;
+
 }
 
 .control-table {
     margin: auto;
+
 
 }
 
@@ -119,7 +121,7 @@ li a:hover {
     margin-left: 250px;
 }
 
-.bedroom2 {
+.pir-sensor {
     position: absolute;
     float: right;
     width: 200px;
@@ -177,11 +179,11 @@ li a:hover {
     top: 340px;
 }
 
-.window{
+.window {
     position: absolute;
     position: relative;
     width: 100px;
-    float:right;
+    float: right;
     top: 260px;
     right: 20px;
 
@@ -189,4 +191,11 @@ li a:hover {
 
 }
 
-.kitchenswitch {}
+.alarm {
+    position: absolute;
+    position: relative;
+    width: 100px;
+    float: left;
+    top: 340px;
+    left: 120px;
+}
