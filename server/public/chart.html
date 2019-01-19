@@ -51,7 +51,7 @@
         }
         socket.on("dbResult", function(value) {
             temp = value.temperature;
-            console.log(temp);
+            console.log(value.temperature[0]);
         });
         let myChart = document.getElementById('myChart').getContext('2d');
         let myChart2 = document.getElementById('myChart2').getContext('2d');
@@ -69,7 +69,7 @@
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: [temp[0]],
+                    data: [temp],
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
