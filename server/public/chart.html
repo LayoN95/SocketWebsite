@@ -49,7 +49,7 @@
             socket.emit("dbRead");
         }
         socket.on("dbResult", function(value) {
-            temp = value.temperature[];
+            temp = value.temperature;
             console.log(temp);
         });
         let myChart = document.getElementById('myChart').getContext('2d');
