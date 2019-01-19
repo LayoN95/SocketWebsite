@@ -78,6 +78,7 @@ exports.start = function () {
                 case 1:
                     if (date >= from && date < to) {
                         socket.emit("outdoorLightChanged", 1);
+                        console.log("outdoor");
 
                     } else {
                         socket.emit("outdoorLightChanged", 0);
