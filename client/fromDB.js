@@ -13,7 +13,7 @@ exports.start = function () {
     var dht11_result, light_result;
 
     socket.on("dbRead", function () {
-        var DHT11 = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 1");
+        var DHT11 = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 10");
         con.query(DHT11, function (err, result) {
             if (err) throw err;
             socket.emit("dbResult", result);
