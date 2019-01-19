@@ -8,7 +8,7 @@
     <title>Historia</title>
 </HEAD>
 
-<BODY>
+<BODY onload="getData()">
     <div class="site-wrapper">
         <div class="header-wrapper">
             <h1 style="font-size: 60px;">Historia</h1>
@@ -41,6 +41,16 @@
     <script src="/socket.io/socket.io.js"></script>
 
     <script type="text/javascript">
+        var socket = io.connect('/');
+
+        var temp;
+
+        function getData() {
+            socket.emit("dbRead");
+        }
+        socket.on("dbResult", function(value) {
+            temp = value.temperature;
+        });
         let myChart = document.getElementById('myChart').getContext('2d');
         let myChart2 = document.getElementById('myChart2').getContext('2d');
 
@@ -57,14 +67,7 @@
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: [
-                        23.8,
-                        22.8,
-                        21.8,
-                        22.8,
-                        22.8,
-                        23.8
-                    ],
+                    data: [temp],
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
