@@ -51,7 +51,11 @@
         }
         socket.on("dbResult", function(value) {
             temp = value.temperature;
-            console.log(value[].temperature);
+            for(var i=0, i<=10, i++)
+                {
+                    console.log(value[i].temperature);
+
+                }
         });
         let myChart = document.getElementById('myChart').getContext('2d');
         let myChart2 = document.getElementById('myChart2').getContext('2d');
