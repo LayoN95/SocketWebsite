@@ -18,6 +18,7 @@ exports.start = function () {
 
         kitchen_from = time.kitchen_from;
         kitchen_to = time.kitchen_to;
+        var kitchen_light = 0;
 
         console.log(kitchen_from, kitchen_to);
 
@@ -39,7 +40,7 @@ exports.start = function () {
         con.query(Floor, function (err, result) {
             if (err) throw err;
         });
-        turnLightsOnOff(kitchen_from, kitchen_to);
+        turnLightsOnOff(kitchen_from, kitchen_to, 0);
         //turnLightsOnOff(outdoor_from, outdoor_to);
 
         //turnLightsOnOff(outdoor_from, outdoor_to);
@@ -49,20 +50,24 @@ exports.start = function () {
     });
 
 
-    function turnLightsOnOff(from, to) {
+    function turnLightsOnOff(from, to, device) {
         var interval = setInterval(function () {
             var dt = dateTime.create();
             var date = dt.format('H:M');
-            if (date >= from && date < to) {
-                socket.emit("stateChanged", 1);
+            switch (device) {
+                case 0:
+                    if (date >= from && date < to) {
+                        socket.emit("stateChanged", 1);
 
-            } else {
-                socket.emit("stateChanged", 0);
-                if (date >= to) {
-                    socket.emit("stateChanged", 0); //Chyba
-                    clearInterval(interval);
-                    console.log("zakonczenie petli");
-                }
+                    } else {
+                        socket.emit("stateChanged", 0);
+                        if (date >= to) {
+                            socket.emit("stateChanged", 0); //Chyba
+                            clearInterval(interval);
+                            console.log("zakonczenie petli");
+                        }
+                    }
+
 
             }
             console.log(date);

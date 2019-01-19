@@ -3,7 +3,7 @@ var socket = require("socket.io-client")("http://192.168.43.74:3000");
 var Gpio = require('onoff').Gpio;
 var LED = new Gpio(22, 'out');
 var Kitchen_LED = new Gpio(22, 'out');
-var Bathroom_LED = new Gpio(22, 'out');
+var floor_LED = new Gpio(22, 'out');
 
 var mysql = require('mysql');
 var con = mysql.createConnection({
