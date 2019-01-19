@@ -18,9 +18,17 @@ exports.start = function () {
 
         kitchen_from = time.kitchen_from;
         kitchen_to = time.kitchen_to;
+        outdoor_from = time.outdoor_from;
+        outdoor_to = time.outdoor_to;
+        floor_from = time.floor_from;
+        floor_to = time.floor_to;
+
         var kitchen_light = 0;
+        var outdoor_light = 1;
+        var floor_light = 2;
 
         console.log(kitchen_from, kitchen_to);
+
 
         //INSERT DO BAZY
         //var sql = 	("INSERT INTO `CONTROL` VALUES ('LIGHT','"+from+"','"+to+"')");
@@ -41,7 +49,7 @@ exports.start = function () {
             if (err) throw err;
         });
         turnLightsOnOff(kitchen_from, kitchen_to, 0);
-        //turnLightsOnOff(outdoor_from, outdoor_to);
+        turnLightsOnOff(outdoor_from, outdoor_to, 1);
 
         //turnLightsOnOff(outdoor_from, outdoor_to);
 
@@ -63,6 +71,18 @@ exports.start = function () {
                         socket.emit("stateChanged", 0);
                         if (date >= to) {
                             socket.emit("stateChanged", 0); //Chyba
+                            clearInterval(interval);
+                            console.log("zakonczenie petli");
+                        }
+                    }
+                case 1:
+                    if (date >= from && date < to) {
+                        socket.emit("outdoorLightChanged", 1);
+
+                    } else {
+                        socket.emit("outdoorLightChanged", 0);
+                        if (date >= to) {
+                            socket.emit("outdoorLightChanged", 0); //Chyba
                             clearInterval(interval);
                             console.log("zakonczenie petli");
                         }
