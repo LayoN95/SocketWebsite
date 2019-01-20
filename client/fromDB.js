@@ -24,7 +24,14 @@ exports.start = function () {
             if (err) throw err;
             socket.emit("lightResult", result);
 
-
+            con.query("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 10", function(err, rows){
+                if (err) {
+                    throw err;
+                    console.log(err);
+                } else {
+                    console.log(rows);
+                }
+            })
 
         });
         //socket.emit("dbResult", {"light": light_result, "dht11": dht11_result});
