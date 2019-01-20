@@ -51,7 +51,7 @@
             socket.emit("dbRead");
         }
         socket.on("dbResult", function(value) {
-
+            console.log("witaj");
           for (var i; i<=10; i++)
         {
             temp = value[i].temperature;
