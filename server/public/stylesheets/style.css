@@ -70,8 +70,6 @@ Menu
 }
 
 .dbTable {
-    margin-top: 50px;
-    margin-bottom: 50px;
     width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
