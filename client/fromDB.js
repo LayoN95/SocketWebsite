@@ -14,7 +14,7 @@ exports.start = function () {
 
 
     socket.on("dbRead", function () {
-        var DHT11 = ("SELECT temperature, humidity, date FROM `DHT11` ORDER BY id DESC LIMIT 10");
+        var DHT11 = ("SELECT temperature, humidity, date FROM `DHT11` ORDER BY id DESC LIMIT 48");
         con.query(DHT11, function (err, result) {
             if (err) throw err;
             socket.emit("dbResult", result);
