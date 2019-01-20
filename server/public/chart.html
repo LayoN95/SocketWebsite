@@ -28,6 +28,9 @@
             <div>
                 <canvas id="myChart"></canvas>
             </div>
+                        <div>
+                <canvas id="myChart2"></canvas>
+            </div>
 
 
         </div>
@@ -43,6 +46,7 @@
         var socket = io.connect('/');
 
         var temp = [];
+        var humid = [];
         var date = [];
         var temper = [12, 32, 43, 123, 234, 12];
 
@@ -54,16 +58,17 @@
 
             for (var i = 0; i < 47; i++) {
                 temp[i] = value[i].temperature;
+                humid[i] = value[i].humidity;
                 date[i] = value[i].date;
 
             }
             console.log(date);
-            chart(temp, date);
+            chart(temp, date, myChart);
 
             console.log("temp" + temp);
         });
         let myChart = document.getElementById('myChart').getContext('2d');
-        // let myChart2 = document.getElementById('myChart2').getContext('2d');
+        let myChart2 = document.getElementById('myChart2').getContext('2d');
 
 
 
@@ -72,8 +77,8 @@
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
 
-        function chart(data, date) {
-            let massPopChart = new Chart(myChart, {
+        function chart(data, date, chart) {
+            let massPopChart = new Chart(chart, {
                 type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
                 data: {
                     labels: date,
