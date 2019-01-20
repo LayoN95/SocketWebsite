@@ -70,7 +70,7 @@ Menu
 }
 
 .dbTable {
-    width: 400px;
+    width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
 }
@@ -78,7 +78,7 @@ Menu
     display: block;
     width: 100%;
     overflow: auto;
-    height: 100px;
+    height: 500px;
 }
 
 .dbTable thead tr{
