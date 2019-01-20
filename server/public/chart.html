@@ -52,7 +52,6 @@
         socket.on("dbResult", function(value) {
 
       temp = value;
-            console.log(temp.temperature);
             chart();
 
 
@@ -73,7 +72,7 @@ function chart(){
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: [temp[4].temperature],
+                    data: [temp.temperature],
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
