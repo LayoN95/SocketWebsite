@@ -53,8 +53,9 @@
             temp = value.temperature;
             for(var i=0; i<=10; i++)
                 {
-                    temp = value[i].temperature;
+                    temp = value;
                     console.log(value[i].temperature);
+                    console.log(temp[i].humidity);
 
                 }
         });
