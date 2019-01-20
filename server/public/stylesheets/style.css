@@ -78,7 +78,7 @@ Menu
     display: block;
     width: 100%;
     overflow: auto;
-    height: 500px;
+    height: 250px;
 }
 
 .dbTable thead tr {
