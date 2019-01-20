@@ -12,6 +12,7 @@ exports.start = function () {
 
     var dht11_result, light_result;
 
+
     socket.on("dbRead", function () {
         var DHT11 = ("SELECT temperature, humidity FROM `DHT11` ORDER BY id DESC LIMIT 10");
         con.query(DHT11, function (err, result) {
@@ -22,6 +23,14 @@ exports.start = function () {
         con.query(LIGHT, function (err, result) {
             if (err) throw err;
             socket.emit("lightResult", result);
+
+            con.query("SELECT * FROM `LIGHTING`", function (err, rows){
+                if(err) {
+                    throw err;
+                console.log(err)} else {
+                    console.log(rows);
+                }
+            })
 
         });
         //socket.emit("dbResult", {"light": light_result, "dht11": dht11_result});

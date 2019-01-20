@@ -66,18 +66,6 @@
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
 
-        $(document).ready(function () {
-var SERVER_URL = "http://192.168.43.74:3000/";
-$.get(SERVER_URL, function (record) {
-
-if (record !== null) {
-var name = record.map(function (rec) {
-return rec.temperature;
-});
-var value = record.map(function (rec) {
-return rec.humidity;
-});
-
         let massPopChart = new Chart(myChart, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data: {
