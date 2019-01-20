@@ -91,8 +91,8 @@
 
             }
             console.log(date);
-            chart(temp, date, myChart, "Temperatura DHT11");
-            chart(humid, date, myChart2, "Wilgotność DHT11");
+            chart(temp, date, myChart, "Temperatura DHT11", 50, 1, 50);
+            chart(humid, date, myChart2, "Wilgotność DHT11", 10, 5, 100);
 
 
 
@@ -109,7 +109,7 @@
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
 
-        function chart(data, date, chart, name) {
+        function chart(data, date, chart, name, step, stepValue, max) {
             let massPopChart = new Chart(chart, {
                 type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
                 data: {
@@ -138,9 +138,9 @@
                             display: true,
                             ticks: {
                                 beginAtZero: true,
-                                steps: 10,
-                                stepValue: 5,
-                                max: 100
+                                steps: step,
+                                stepValue: stepValue,
+                                max: max
                             }
 
                         }]
