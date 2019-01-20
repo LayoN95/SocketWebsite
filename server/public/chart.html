@@ -45,6 +45,7 @@
         var socket = io.connect('/');
 
         var temp = [];
+        var date = [];
         var temper = [12, 32, 43, 123, 234, 12];
 
         function getData() {
@@ -56,9 +57,11 @@
             for (var i=0; i<9; i++)
                 {
                     temp[i] = value[i].temperature;
+                    date[i] = date[i].temperature;
+
                 }
             console.log(temp);
-            chart(temp);
+            chart(temp, date);
 
 console.log("temp" + temp);
         });
@@ -71,11 +74,11 @@ console.log("temp" + temp);
         Chart.defaults.global.defaultFontFamily = 'Lato';
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
-function chart(data){
+function chart(data, date){
     let massPopChart = new Chart(myChart, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data: {
-                labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
+                labels: date,
                 datasets: [{
                     label: 'Temperatura DHT-11',
                     data: data,
