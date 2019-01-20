@@ -50,15 +50,23 @@
             socket.emit("dbRead");
         }
         socket.on("dbResult", function(value) {
-            for(var i=0; i<=10; i++)
-                {
-                    temp = value;
-                   // console.log(temp[i].temperature);
-                   // console.log(temp[i].humidity);
 
-                }
+      temp = value;
+            console.log(temp[4].temperature);
 
-            let massPopChart = new Chart(myChart, {
+
+        });
+        let myChart = document.getElementById('myChart').getContext('2d');
+        let myChart2 = document.getElementById('myChart2').getContext('2d');
+
+
+
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = 'black';
+
+        let massPopChart = new Chart(myChart, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data: {
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
@@ -77,18 +85,6 @@
             },
 
         });
-        });
-        let myChart = document.getElementById('myChart').getContext('2d');
-        let myChart2 = document.getElementById('myChart2').getContext('2d');
-
-
-
-        // Global Options
-        Chart.defaults.global.defaultFontFamily = 'Lato';
-        Chart.defaults.global.defaultFontSize = 18;
-        Chart.defaults.global.defaultFontColor = 'black';
-
-
 
         let massPopChart2 = new Chart(myChart2, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
