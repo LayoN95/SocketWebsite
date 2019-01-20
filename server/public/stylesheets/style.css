@@ -70,6 +70,7 @@ Menu
 }
 
 .dbTable {
+    padding-top: 50px;
     width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
