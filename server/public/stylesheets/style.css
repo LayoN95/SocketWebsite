@@ -31,10 +31,10 @@ body {
 .content-wrapper {
     position: relative;
 
-    width: 80%;
+    width: 100%;
     margin: auto;
     text-align: center;
-    margin-top: 50px;
+   /* margin-top: 50px;*/
 
 }
 
@@ -70,12 +70,11 @@ Menu
 }
 
 .databaseTable {
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
+
 }
 
 .dbTable {
+    margin: auto;
     width: 80%;
     table-layout: fixed;
     border-collapse: collapse;
