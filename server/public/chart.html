@@ -52,19 +52,18 @@
         socket.on("dbResult", function(value) {
             console.log("witaj");
 
-            for (var i=0; i<47; i++)
-                {
-                    temp[i] = value[i].temperature;
-                    date[i] = value[i].date;
+            for (var i = 0; i < 47; i++) {
+                temp[i] = value[i].temperature;
+                date[i] = value[i].date;
 
-                }
+            }
             console.log(date);
             chart(temp, date);
 
-console.log("temp" + temp);
+            console.log("temp" + temp);
         });
         let myChart = document.getElementById('myChart').getContext('2d');
-       // let myChart2 = document.getElementById('myChart2').getContext('2d');
+        // let myChart2 = document.getElementById('myChart2').getContext('2d');
 
 
 
@@ -72,55 +71,28 @@ console.log("temp" + temp);
         Chart.defaults.global.defaultFontFamily = 'Lato';
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
-function chart(data, date){
-    let massPopChart = new Chart(myChart, {
-            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-            data: {
-                labels: date,
-                datasets: [{
-                    label: 'Temperatura DHT-11',
-                    data: data,
-                   /* backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)'
-                    ],*/
-                    borderWidth: 1,
-                    borderColor: '#752',
-                    hoverBorderWidth: 3,
-                    hoverBorderColor: '#000'
-                }]
-            },
 
-        });
+        function chart(data, date) {
+            let massPopChart = new Chart(myChart, {
+                type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: [1,2,3,4,5,6,7,8,9,10],
+                    datasets: [{
+                        label: 'Temperatura DHT-11',
+                        data: data,
+                        /* backgroundColor: [
+                             'rgba(255, 99, 132, 0.6)'
+                         ],*/
+                        borderWidth: 1,
+                        borderColor: '#752',
+                        hoverBorderWidth: 3,
+                        hoverBorderColor: '#000'
+                    }]
+                },
 
-}
+            });
 
-
-        let massPopChart2 = new Chart(myChart2, {
-            type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
-            data: {
-                labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
-                datasets: [{
-                    label: 'Wilgotność DHT-11',
-                    data: [
-                        23.8,
-                        22.8,
-                        21.8,
-                        22.8,
-                        22.8,
-                        23.8
-                    ],
-                    //backgroundColor:'green',
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.6)'
-                    ],
-                    borderWidth: 1,
-                    borderColor: '#777',
-                    hoverBorderWidth: 3,
-                    hoverBorderColor: '#000'
-                }]
-            },
-
-        });
+        }
 
     </script>
 </BODY>
