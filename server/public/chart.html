@@ -44,7 +44,7 @@
     <script type="text/javascript">
         var socket = io.connect('/');
 
-        var temp;
+        var temp = [];
         var temper = [12, 32, 43, 123, 234, 12];
 
         function getData() {
@@ -53,8 +53,11 @@
         socket.on("dbResult", function(value) {
             console.log("witaj");
 
-            temp = Object.values(value.temperature)
-
+            for (var i=0; i<9; i++)
+                {
+                    temp[i] = value[i].temperature;
+                    console.log(temp[i]);
+                }
 
 
 console.log("temp" + temp);
