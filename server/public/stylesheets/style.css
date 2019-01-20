@@ -69,6 +69,33 @@ Menu
     width: 45%;
 }
 
+.dbTable {
+    width: 400px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.dbTable tbody{
+    display: block;
+    width: 100%;
+    overflow: auto;
+    height: 100px;
+}
+
+.dbTable thead tr{
+    display: block;
+}
+
+.dbTable thead{
+    background: black;
+    color: #fff;
+}
+
+.dbTable th, .dbTable td{
+    padding: 5px;
+    text-align: left;
+    width: 200px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
