@@ -150,14 +150,18 @@
             });
 
         }
-        socket.on("dbInsert", function addData() {
-    myChart.data.labels.push(date);
-    myChart.data.datasets.forEach((dataset) => {
-        dataset.data.push(temp);
+        socket.on("dbInsert", function(){
+           addData(myChart, date, temp);
+            console.log("UPDATE CHART");
+        });
+
+        function addData(chart, label, data) {
+    chart.data.labels.push(label);
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.push(data);
     });
-    myChart.update();
-    console.log("update chart");
-});
+    chart.update();
+}
     </script>
 </BODY>
 
