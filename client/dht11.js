@@ -58,6 +58,7 @@ exports.start = function () {
         var date = dt.format('Y-m-d H:M:S');
         //console.log(date.toString());
         var sql = ("INSERT INTO `DHT11` (id, temperature, humidity, date) VALUES (''," + temp + "," + humid + ",NOW())");
+        socket.emit("dbInsert");
         con.query(sql, function (err, result) {
             if (err) throw err;
             //console.log("1 record inserted");
