@@ -54,7 +54,7 @@
             for(var i=0; i<=10; i++)
                 {
                     temp = value;
-                    console.log(value[i].temperature);
+                    console.log(temp[i].temperature);
                     console.log(temp[i].humidity);
 
                 }
@@ -75,7 +75,7 @@
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: [temp],
+                    data: [temp[1].humidity],
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
