@@ -52,9 +52,11 @@
         }
         socket.on("dbResult", function(value) {
 
-      temp = value.temperature;
-            console.log(temper);
-            console.log(value.temperature);
+          for (var i; i<=10; i++)
+        {
+            temp = value[i].temperature;
+            console.log(temp);
+        }
 
 
         });
