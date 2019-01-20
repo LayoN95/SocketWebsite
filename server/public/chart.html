@@ -33,7 +33,7 @@
             </div>
 
             <div class = "databaseTable">
-            <table><tr><td>ID</td><td>Temperatura</td><td>Wilgotność</td><td>Data</td></tr></table>
+            <table id = "dbTable"><tr><td>ID</td><td>Temperatura</td><td>Wilgotność</td><td>Data</td></tr></table>
             </div>
 
 
@@ -69,6 +69,17 @@
             console.log(date);
             chart(temp, date, myChart, "Temperatura DHT11");
             chart(humid, date, myChart2, "Wilgotność DHT11");
+
+            var table = document.getElementById("dbTable");
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            cell2.innerHTML = temp[1];
+            cell3.innerHTML = humid[1];
+            cell4.innerHTML = date[1];
+
 
             console.log("temp" + temp);
         });
