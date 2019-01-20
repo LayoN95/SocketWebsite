@@ -29,7 +29,7 @@ exports.start = function () {
                     throw err;
                     console.log(err);
                 } else {
-                    console.log(rows);
+                    console.log(rows.temperature);
                 }
             })
 
