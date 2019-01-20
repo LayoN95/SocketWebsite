@@ -150,10 +150,13 @@
             });
 
         }
-        socket.on("dbInsert", function(){
-                      chart(temp, date, myChart, "Temperatura DHT11", 15, 1, 30);
-            chart(humid, date, myChart2, "Wilgotność DHT11", 10, 5, 100);
-        });
+        socket.on("dbInsert", function addData() {
+    myChart.data.labels.push(date);
+    myChart.data.datasets.forEach((dataset) => {
+        dataset.data.push(temp);
+    });
+    myChart.update();
+});
     </script>
 </BODY>
 
