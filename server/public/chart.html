@@ -32,8 +32,20 @@
                 <canvas id="myChart2"></canvas>
             </div>
 
-            <div class = "databaseTable">
-            <table id = "dbTable"><tr><td>ID</td><td>Temperatura</td><td>Wilgotność</td><td>Data</td></tr></table>
+            <div class="databaseTable">
+                <table id="dbTable">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Temperatura</td>
+                            <td>Wilgotność</td>
+                            <td>Data</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
 
 
@@ -65,15 +77,17 @@
                 humid[i] = value[i].humidity;
                 date[i] = value[i].date;
 
-                            var table = document.getElementById("dbTable");
-            var row = table.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            cell2.innerHTML = temp[i];
-            cell3.innerHTML = humid[i];
-            cell4.innerHTML = date[i];
+                /*var table = document.getElementById("dbTable");
+                var row = table.insertRow(0);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                var cell4 = row.insertCell(3);
+                cell2.innerHTML = temp[i];
+                cell3.innerHTML = humid[i];
+                cell4.innerHTML = date[i];*/
+                $("#dbTable").find('tbody').append("<tr><td>"i"</td><td>"temp[i]"</td><td>"humid[i]"</td><td>"date[i]"</td></tr>");
+
 
             }
             console.log(date);
