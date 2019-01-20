@@ -50,12 +50,12 @@
             socket.emit("dbRead");
         }
         socket.on("dbResult", function(value) {
-            temp = value.temperature;
             for(var i=0; i<=10; i++)
                 {
                     temp = value;
                     console.log(temp[i].temperature);
                     console.log(temp[i].humidity);
+                    console.log(temp);
 
                 }
         });
@@ -75,7 +75,7 @@
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: [temp.humidity],
+                    data: [],
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
