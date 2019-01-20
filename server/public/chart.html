@@ -58,6 +58,7 @@
                     temp[i] = value[i].temperature;
                 }
             console.log(temp);
+            chart(temp);
 
 console.log("temp" + temp);
         });
@@ -70,14 +71,14 @@ console.log("temp" + temp);
         Chart.defaults.global.defaultFontFamily = 'Lato';
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
-
-        let massPopChart = new Chart(myChart, {
+function chart(data){
+    let massPopChart = new Chart(myChart, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data: {
                 labels: ['7-12-2018', '8-12-2018', '9-12-2018', '10-12-2018', '11-12-2018', '12-12-2018'],
                 datasets: [{
                     label: 'Temperatura DHT-11',
-                    data: temper,
+                    data: data,
                     //backgroundColor:'green',
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.6)'
@@ -90,6 +91,9 @@ console.log("temp" + temp);
             },
 
         });
+
+}
+
 
         let massPopChart2 = new Chart(myChart2, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
