@@ -53,6 +53,7 @@
 
       temp = value;
             console.log(temp[4].temperature);
+            chart();
 
 
         });
@@ -65,7 +66,7 @@
         Chart.defaults.global.defaultFontFamily = 'Lato';
         Chart.defaults.global.defaultFontSize = 18;
         Chart.defaults.global.defaultFontColor = 'black';
-
+function chart(){
         let massPopChart = new Chart(myChart, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
             data: {
@@ -84,7 +85,8 @@
                 }]
             },
 
-        });
+        });}
+
 
         let massPopChart2 = new Chart(myChart2, {
             type: 'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
