@@ -1,4 +1,5 @@
 <HTML>
+
 <HEAD>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -32,7 +33,7 @@
             </div>
 
             <div class="databaseTable">
-                <table class = "dbTable" id="dbTable"  style="border-color: white;" border="2">
+                <table class="dbTable" id="dbTable" style="border-color: white;" border="2">
                     <thead>
                         <tr>
                             <th>Data</th>
@@ -85,7 +86,7 @@
                 cell2.innerHTML = temp[i];
                 cell3.innerHTML = humid[i];
                 cell4.innerHTML = date[i];*/
-                $("#dbTable").find('tbody').append("<tr><td>"+date[i]+"</td><td>"+temp[i]+"</td><td>"+humid[i]+"</td></tr>");
+                $("#dbTable").find('tbody').append("<tr><td>" + date[i] + "</td><td>" + temp[i] + "</td><td>" + humid[i] + "</td></tr>");
 
 
             }
@@ -132,6 +133,16 @@
                             ticks: {
                                 display: false
                             }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            ticks: {
+                                beginAtZero: true,
+                                steps: 10,
+                                stepValue: 5,
+                                max: 100
+                            }
+
                         }]
                     }
                 }
