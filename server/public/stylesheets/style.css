@@ -163,7 +163,7 @@ li a:hover {
     width: 200px;
     height: 100px;
     top: 490px;
-    right: 130px;
+    right: 60px;
 }
 
 .kitchen_kettle {
@@ -182,7 +182,7 @@ li a:hover {
     height: 50px;
     float: left;
     margin-top: 300px;
-    margin-left: 230px;
+    margin-left: 290px;
 
 
 }
@@ -193,7 +193,7 @@ li a:hover {
     height: 50px;
     float: left;
     top: 510px;
-    left: 400px;
+    left: 470px;
 }
 
 .livingroom {
@@ -211,7 +211,7 @@ li a:hover {
     position: relative;
     float: right;
     width: 100px;
-    right: 330px;
+    right: 310px;
     top: 340px;
 }
 
@@ -221,7 +221,6 @@ li a:hover {
     width: 100px;
     float: right;
     top: 260px;
-    right: 20px;
 
 
 
@@ -233,5 +232,5 @@ li a:hover {
     width: 100px;
     float: left;
     top: 340px;
-    left: 120px;
+    left: 150px;
 }
